@@ -1,0 +1,900 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BuildSoft.BIMExpert.Plugin</name>
+    </assembly>
+    <members>
+        <member name="T:BuildSoft.BIMExpert.Plugin.BIMExpert">
+            <summary>
+            Class to use the BIM Expert API
+            </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.Plugin.BIMExpert.BIMExpertName">
+            <summary>The const name of BIM Expert.</summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.Plugin.BIMExpert.PluginIdDictionary">
+            <summary>
+            Dictionary with IDs corresponding to the client type.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.BIMExpert.DownloadAttachment">
+            <summary>
+            Get the attachment linked to the transfer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.BIMExpert.UploadAttachment(System.Guid,System.Byte[],System.String[])">
+            <summary>
+            Add a file to the transfer
+            </summary>
+            <param name="clientid"></param>
+            <param name="attachment"></param>
+            <param name="arguments"></param>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.BIMExpert.TryDownloadResults(BuildSoft.UBSM.Structure,System.String,System.String)">
+            <summary>
+            Try to download (copy) the results from the result folder to the destination folder. 
+            </summary>
+            <param name="ubsm">UBSM model with results</param>
+            <param name="sourcePath">Source path of the results</param>
+            <param name="destinationPath">Destination path to extract the results to</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.BIMExpert.GetClients(BuildSoft.BIMExpert.Plugin.GatewayClientType,System.Version[])">
+            <summary>
+            Return a list of clients
+            </summary>
+            <param name="softwaretype">Type of the client software</param>
+            <param name="possibleVersions">Possible versions of the client software</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.BIMExpert.CancelImport">
+            <summary>
+            Request BIM Expert to cancel the import action
+            </summary>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.BIMExpert.CancelExport">
+            <summary>
+            Request BIM Expert to cancel the export action
+            </summary>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.BIMExpert.RequestLoginStatus(System.Boolean@,System.String@)">
+            <summary>
+            Determine the status of the connection with the server
+            </summary>
+            <param name="connected"></param>
+            <param name="username"></param>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.BIMExpert.RequestLogin(System.String,System.Security.SecureString)">
+            <summary>
+            Allows a plugin to perform a login operation
+            </summary>
+            <param name="username"></param>
+            <param name="pw"></param>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.BIMExpert.RequestLogout">
+            <summary>
+            Allows a plugin to perform a logout operation
+            </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.Plugin.BIMExpert.CurrentVersion">
+            <summary>
+            The current version of BIM Expert
+            </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.Plugin.BIMExpert.WorkingDirectory">
+            <summary>
+            The local appdata folder of the corresponding BIM Expert
+            </summary>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.BIMExpert.TryGetWorkDirectoryForVersion(BuildSoft.BIMExpert.BIMExpertVersion,System.String@)">
+            <summary>
+            Tries to get the working directory for a specific version of BIM Expert
+            </summary>
+            <param name="version">Version of BIM Expert</param>
+            <param name="workingDirectory">Working directory of BIM Expert</param>
+            <returns></returns>
+        </member>
+        <member name="T:BuildSoft.BIMExpert.Plugin.ConversionOption`1">
+            <summary>
+            Generic class for conversion options
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.ConversionOption`1.Key">
+            <summary>
+            Property name
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.ConversionOption`1.BuildSoft#BIMExpert#Plugin#IConversionOption#Value">
+            <summary>
+            Interface compatibility
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.ConversionOption`1.Value">
+            <summary>
+            The option value
+            </summary>
+        </member>
+        <member name="T:BuildSoft.BIMExpert.Plugin.Converters.PluginIconPathConverter">
+            <summary>
+            Converts a path into a <see cref="T:System.Windows.Media.Imaging.BitmapImage"/> from a file at ../Plugins subfolder of BIM Expert executable path.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Converters.PluginIconPathConverter.#ctor">
+            <summary>
+            Creates a new emtpy instance of <see cref="T:BuildSoft.BIMExpert.Plugin.Converters.PluginIconPathConverter"/>
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.Converters.PluginIconPathConverter.UseEntryAssemblyOrExecutingAssemblyFolder">
+            <summary>
+            Tells wheter the folder to be used is from the entry assembly or executing assembly otherwise.
+            For further information see <see cref="M:System.Reflection.Assembly.GetEntryAssembly"/> and <see cref="M:System.Reflection.Assembly.GetExecutingAssembly"/> methods.
+            <b>The default value is true</b>
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.Converters.PluginIconPathConverter.SubFolder">
+            <summary>
+            Gets or set a subfolder name in the folder defined by <see cref="P:BuildSoft.BIMExpert.Plugin.Converters.PluginIconPathConverter.UseEntryAssemblyOrExecutingAssemblyFolder"/> property.
+            <br>The default value is "Plugins" </br>
+            </summary>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Converters.PluginIconPathConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Converters.PluginIconPathConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="T:BuildSoft.BIMExpert.Plugin.Database">
+            <summary>
+            Static class to perform database operations on BIM Expert
+            </summary>
+        </member>
+        <member name="T:BuildSoft.BIMExpert.Plugin.Database.OverviewItem">
+            <summary>
+            Overview item
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.Database.OverviewItem.ID">
+            <summary>
+            Identifier
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.Database.OverviewItem.Version">
+            <summary>
+            Version
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.Database.OverviewItem.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.OverviewItem.#ctor">
+            <summary>
+            Creates a new overview item
+            </summary>
+        </member>
+        <member name="T:BuildSoft.BIMExpert.Plugin.Database.MaterialOverviewItem">
+            <summary>
+            Overview item for materials
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.Database.MaterialOverviewItem.MaterialType">
+            <summary>
+            Material type
+            </summary>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.MaterialOverviewItem.#ctor">
+            <summary>
+            Creates a material overview item
+            </summary>
+        </member>
+        <member name="T:BuildSoft.BIMExpert.Plugin.Database.ParametricSectionOverviewItem">
+            <summary>
+            Overview item for parametric sections
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.Database.ParametricSectionOverviewItem.SectionType">
+            <summary>
+            Section type
+            </summary>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.ParametricSectionOverviewItem.#ctor">
+            <summary>
+            Creates a new parametric section overview item
+            </summary>
+        </member>
+        <member name="T:BuildSoft.BIMExpert.Plugin.Database.CustomSectionOverviewItem">
+            <summary>
+            Overview item for custom sections
+            </summary>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.CustomSectionOverviewItem.#ctor">
+            <summary>
+            Creates a new custom section overview item
+            </summary>
+        </member>
+        <member name="T:BuildSoft.BIMExpert.Plugin.Database.VariableSectionOverviewItem">
+            <summary>
+            Overview item for variable sections
+            </summary>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.VariableSectionOverviewItem.#ctor">
+            <summary>
+            Creates a new variable section overview item
+            </summary>
+        </member>
+        <member name="T:BuildSoft.BIMExpert.Plugin.Database.PlateSectionOverviewItem">
+            <summary>
+            Overview item for plate sections
+            </summary>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.PlateSectionOverviewItem.#ctor">
+            <summary>
+            Creates a new plate section overview item
+            </summary>
+        </member>
+        <member name="T:BuildSoft.BIMExpert.Plugin.Database.AnchorBoltOverviewItem">
+            <summary>
+            Overview item for anchor bolts
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.Database.AnchorBoltOverviewItem.AnchorType">
+            <summary>
+            Type for the anchor
+            </summary>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.AnchorBoltOverviewItem.#ctor">
+            <summary>
+            Creates a new anchor bolt overview item
+            </summary>
+        </member>
+        <member name="T:BuildSoft.BIMExpert.Plugin.Database.BoltOverviewItem">
+            <summary>
+            Overview item for bolts
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.Database.BoltOverviewItem.BoltHeadType">
+            <summary>
+            Type of the bolt head
+            </summary>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.BoltOverviewItem.#ctor">
+            <summary>
+            Creates a new bolt overview item
+            </summary>
+        </member>
+        <member name="T:BuildSoft.BIMExpert.Plugin.Database.NutOverviewItem">
+            <summary>
+            Overview item for nuts
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.Database.NutOverviewItem.NutType">
+            <summary>
+            Nut type
+            </summary>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.NutOverviewItem.#ctor">
+            <summary>
+            Creates a new nut overview item
+            </summary>
+        </member>
+        <member name="T:BuildSoft.BIMExpert.Plugin.Database.WasherOverviewItem">
+            <summary>
+            Overview item for washers
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.Database.WasherOverviewItem.WasherType">
+            <summary>
+            type of the washer
+            </summary>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.WasherOverviewItem.#ctor">
+            <summary>
+            Creates a new washer overview item
+            </summary>
+        </member>
+        <member name="T:BuildSoft.BIMExpert.Plugin.Database.SoilProfileOverviewItem">
+            <summary>
+            Overview item for soil profiles
+            </summary>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.SoilProfileOverviewItem.#ctor">
+            <summary>
+            Creates a new soil profile overview item
+            </summary>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetNumberOfMaterials">
+            <summary>
+            Get the total number of materials.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetAllMaterials">
+            <summary>
+            Get a list of all materials
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetMaterial(System.Guid)">
+            <summary>
+            Get the specified material including all details.
+            </summary>
+            <param name="id">material database identifier</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetNumberOfParametricSections">
+            <summary>
+            Get the total number of parametric sections.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetAllParametricSections">
+            <summary>
+            Get a list of all parametric sections.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetParametricSection(System.Guid,System.Int32)">
+            <summary>
+            Get the specified section including all details.
+            </summary>
+            <param name="id">section database identifier</param>
+            <param name="version">version number in case you need to load an old version</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetNumberOfCustomSections">
+            <summary>
+            Get the total number of custom sections.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetAllCustomSections">
+            <summary>
+            Get a list of all custom sections.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetCompleteCustomSection(System.Guid,System.Int32)">
+            <summary>
+            Get the specified section including all details.
+            </summary>
+            <param name="id">section database identifier</param>
+            <param name="version">version number in case you need to load an old version</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetNumberOfVariableSections">
+            <summary>
+            Get the total number of VariableSections.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetAllVariableSections">
+            <summary>
+            Get a list of all VariableSections
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetVariableSection(System.Guid)">
+            <summary>
+            Get the specified VariableSection including all details.
+            </summary>
+            <param name="id">VariableSection database identifier</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetNumberOfPlateSections">
+            <summary>
+            Get the total number of PlateSections.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetAllPlateSections">
+            <summary>
+            Get a list of all PlateSections
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetPlateSection(System.Guid)">
+            <summary>
+            Get the specified PlateSection including all details.
+            </summary>
+            <param name="id">PlateSection database identifier</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetMaterialProperties(System.Guid)">
+            <summary>
+            Get properties for a given material
+            </summary>
+            <param name="matid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetSectionProperties(System.Guid)">
+            <summary>
+            Get properties for a given section
+            </summary>
+            <param name="sectid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetNumberOfAnchorBolts">
+            <summary>
+            Get the total number of AnchorBolts.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetAllAnchorBolts">
+            <summary>
+            Get a list of all AnchorBolts
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetAnchorBolt(System.Guid)">
+            <summary>
+            Get the specified AnchorBolt including all details.
+            </summary>
+            <param name="id">AnchorBolt database identifier</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetNumberOfBolts">
+            <summary>
+            Get the total number of Bolts.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetAllBolts">
+            <summary>
+            Get a list of all Bolts
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetBolt(System.Guid)">
+            <summary>
+            Get the specified Bolt including all details.
+            </summary>
+            <param name="id">Bolt database identifier</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetNumberOfNuts">
+            <summary>
+            Get the total number of Nuts.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetAllNuts">
+            <summary>
+            Get a list of all Nuts
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetNut(System.Guid)">
+            <summary>
+            Get the specified Nut including all details.
+            </summary>
+            <param name="id">Nut database identifier</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetNumberOfWashers">
+            <summary>
+            Get the total number of Washers.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetAllWashers">
+            <summary>
+            Get a list of all Washers
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetWasher(System.Guid)">
+            <summary>
+            Get the specified Washer including all details.
+            </summary>
+            <param name="id">Washer database identifier</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetNumberOfSoilProfiles">
+            <summary>
+            Get the total number of SoilProfiles.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetAllSoilProfiles">
+            <summary>
+            Get a list of all SoilProfiles
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Database.GetSoilProfile(System.Guid)">
+            <summary>
+            Get the specified SoilProfile including all details.
+            </summary>
+            <param name="id">SoilProfile database identifier</param>
+            <returns></returns>
+        </member>
+        <member name="T:BuildSoft.BIMExpert.Plugin.ExchangeDirection">
+            <summary>
+            Allowed exchange direction
+            </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.Plugin.ExchangeDirection.ImportAndExport">
+            <summary>
+            Bidirectional
+            </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.Plugin.ExchangeDirection.ImportOnly">
+            <summary>
+            Import only
+            </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.Plugin.ExchangeDirection.ExportOnly">
+            <summary>
+            Export only
+            </summary>
+        </member>
+        <member name="T:BuildSoft.BIMExpert.Plugin.GatewayClient">
+            <summary>
+            More information about a specific client
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.GatewayClient.Description">
+            <summary>
+            A text description
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.GatewayClient.ID">
+            <summary>
+            The id
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.GatewayClient.ClientType">
+            <summary>
+            The client type
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.GatewayClient.ClientVersion">
+            <summary>
+            [optional] The version of the client 
+            </summary>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.GatewayClient.Equals(BuildSoft.BIMExpert.Plugin.GatewayClient)">
+            <summary>
+            Check if both items are equal.
+            </summary>
+            <param name="other">Item to compare with</param>
+            <returns>True if values are identical</returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.GatewayClient.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.GatewayClient.GetHashCode">
+            <summary>
+            Get the HashCode
+            </summary>
+            <returns>Hash code</returns>
+        </member>
+        <member name="T:BuildSoft.BIMExpert.Plugin.GatewayClientType">
+            <summary>
+            Type of client that's connected to your local Gateway
+            </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.Plugin.GatewayClientType.BIMExpert">
+            <summary>
+            BIM Expert client
+            </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.Plugin.GatewayClientType.Diamonds">
+            <summary>
+            Diamonds client
+            </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.Plugin.GatewayClientType.PowerConnect">
+            <summary>
+            PowerConnect client
+            </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.Plugin.GatewayClientType.SectionUtility">
+            <summary>
+            Section Utility client
+            </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.Plugin.GatewayClientType.Unknown">
+            <summary>
+            Unknown client
+            </summary>
+        </member>
+        <member name="T:BuildSoft.BIMExpert.Plugin.Dispatcher">
+            <summary>
+            Helper class to dispatch GUI calls to the correct thread.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Dispatcher.InvokeWPF(System.Windows.DependencyObject,System.Action)">
+            <summary>
+            Dispatch modification of WPF control to the GUI thread
+            </summary>
+            <param name="control"></param>
+            <param name="a"></param>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.Dispatcher.InvokeWinForms(System.Windows.Forms.Control,System.Action)">
+            <summary>
+            Dispatch modification of WinForms control to the GUI thread
+            </summary>
+            <param name="con"></param>
+            <param name="a"></param>
+        </member>
+        <member name="T:BuildSoft.BIMExpert.Plugin.IConversionOption">
+            <summary>
+            Base interface type for conversion options.
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.IConversionOption.Key">
+            <summary>
+            Property name
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.IConversionOption.Value">
+            <summary>
+            Option value
+            </summary>
+        </member>
+        <member name="T:BuildSoft.BIMExpert.Plugin.IPlugin">
+            <summary>
+            Basic plugin interface for BuildSoft BIM Center plugins
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.IPlugin.ID">
+            <summary>
+            Unique identifier used to distiguish between different plug-ins
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.IPlugin.Name">
+            <summary>
+            Localizable name that can be used to launch conversions through the Gateway
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.IPlugin.ImportDescription">
+            <summary>
+            Description of the plugin, shown in the plug-in selection window
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.IPlugin.ExportDescription">
+            <summary>
+            Description of the plugin, shown in the plug-in selection window
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.IPlugin.AllowedExchange">
+            <summary>
+            Allowed exchange direction of the plugin
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.IPlugin.Color">
+            <summary>
+            Define a background color for your plugin.
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.IPlugin.IconName">
+            <summary>
+            Put an image with this name in the plugin folder and it will be displayed with your plugin.
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.IPlugin.UICulture">
+            <summary>
+            Will be updated by BIM Expert to reflect the user's language preference. The controls should dynamically react to a change
+            in UICulture.
+            </summary>
+        </member>
+        <member name="T:BuildSoft.BIMExpert.Plugin.IUBSMConverter">
+            <summary>
+            Plugin that allows conversion to and from UBSM
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.IUBSMConverter.Progress">
+            <summary>
+            Current progress made by a conversion method [0..100]
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.IUBSMConverter.ProgressInformation">
+            <summary>
+            Information about the current progress
+            </summary>
+        </member>
+        <member name="E:BuildSoft.BIMExpert.Plugin.IUBSMConverter.ProgressChanged">
+            <summary>
+            Notify BIM Expert to update the progress bar
+            </summary>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.IUBSMConverter.CreateImportControl">
+            <summary>
+            User control provided by the plugin to display in Gateway Agent during conversion native -> UBSM (Convert)
+            </summary>
+            <returns>A WPF User Control</returns>
+            <remarks>Both winforms and WPF User Controls are accepted by the Gateway Plugin framework, but WPF is preferred</remarks>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.IUBSMConverter.CreateExportControl">
+            <summary>
+            User control provided by the plugin to display in Gateway Agent during conversion UBSM -> native (ConvertBack)
+            </summary>
+            <returns>A WPF User Control</returns>
+            <remarks>Both winforms and WPF User Controls are accepted by the Gateway Plugin framework, but WPF is preferred</remarks>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.IUBSMConverter.CreateSettingsControl">
+            <summary>
+            User control provided by the plugin to adjust the settings of the plugin.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.IUBSMConverter.Convert(System.Collections.Generic.List{BuildSoft.BIMExpert.Plugin.IConversionOption},System.Threading.CancellationToken,BuildSoft.UBSM.Structure@,System.String@)">
+            <summary>
+            Convert the model to a UBSM model
+            </summary>
+            <param name="options">conversion options</param>
+            <param name="token">cancellation token</param>
+            <param name="ubsm">null if the conversion was aborted, otherwise the model</param>
+            <param name="sourcePath">Absolute path to which the relative paths in the ubsm model are relative to</param>
+            <remarks>The conversion method is run on a worker thread so GUI updates should be dispatched.</remarks>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.IUBSMConverter.ConvertBack(BuildSoft.UBSM.Structure,System.String,System.Collections.Generic.List{BuildSoft.BIMExpert.Plugin.IConversionOption},System.Threading.CancellationToken)">
+            <summary>
+            Convert the model back to a pluginmodel
+            </summary>
+            <param name="ubsm">UBSM model</param>
+            <param name="sourcePath"></param>
+            <param name="options">conversion options</param>
+            <param name="token">cancellation token</param>
+            <remarks>The conversion method is run on a worker thread so GUI updates should be dispatched.</remarks>
+        </member>
+        <member name="T:BuildSoft.BIMExpert.Plugin.LoggerExtension">
+            <summary>
+            Class providing extension methods related to logging
+            </summary>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.LoggerExtension.GetLogger(BuildSoft.BIMExpert.Plugin.IPlugin)">
+            <summary>
+            Gets the logger associated to this plugin.
+            </summary>
+            <param name="plugin"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BuildSoft.BIMExpert.Plugin.PluginType">
+            <summary>
+            Type of the plugin
+            </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.Plugin.PluginType.UnderDevelopment">
+            <summary>A BuildSoft plugin under development</summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.Plugin.PluginType.Unknown">
+            <summary>
+            Unknown plugin type
+            </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.Plugin.PluginType.XMLPlugin">
+            <summary>
+            XML plugin
+            </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.Plugin.PluginType.DiamondsPlugin">
+            <summary>
+            Diamonds plugin
+            </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.Plugin.PluginType.PowerConnectPlugin">
+            <summary>
+            Powerconnect plugin
+            </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.Plugin.PluginType.TeklaStructuresPlugin">
+            <summary>
+            Tekla Structures plugin
+            </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.Plugin.PluginType.IDEAStatiCaPlugin">
+            <summary>
+            IDEA StatiCa plugin
+            </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.Plugin.PluginType.CSIPlugin">
+            <summary>
+            CSI (SAP2000 &amp; ETABS) plugin
+            </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.Plugin.PluginType.CXLPlugin">
+            <summary>
+            CXL (file) plugin
+            </summary>
+        </member>
+        <member name="T:BuildSoft.BIMExpert.Plugin.SettingsViewModel">
+            <summary>
+            The view model for the settings user control
+            </summary>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.SettingsViewModel.Load">
+            <summary>
+            Method to load previously stored settings
+            </summary>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.SettingsViewModel.Save">
+            <summary>
+            Method to store the settings
+            </summary>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.SettingsViewModel.Undo">
+            <summary>
+            Method to undo the last action
+            </summary>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.SettingsViewModel.Redo">
+            <summary>
+            Method to redo the last undo
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.SettingsViewModel.CanSave">
+            <summary>
+            Flag to indicate the settings can be saved
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.SettingsViewModel.CanUndo">
+            <summary>
+            Flag to indicate the settings changes can be undone
+            </summary>
+        </member>
+        <member name="P:BuildSoft.BIMExpert.Plugin.SettingsViewModel.CanRedo">
+            <summary>
+            Flag to indicate the settings changes can be redone
+            </summary>
+        </member>
+        <member name="E:BuildSoft.BIMExpert.Plugin.SettingsViewModel.PropertyChanged">
+            <summary>
+            Notify other members that a property has changed
+            </summary>
+        </member>
+        <member name="M:BuildSoft.BIMExpert.Plugin.SettingsViewModel.OnPropertyChanged(System.String)">
+            <summary>
+            Call the property changed event
+            </summary>
+            <param name="propertyName"></param>
+        </member>
+        <member name="T:BuildSoft.BIMExpert.BIMExpertVersion">
+            <summary>
+            BIM Expert versions
+            </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.BIMExpertVersion.UNKNOWN">
+            <summary> Unknown </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.BIMExpertVersion.VERSION_0_0">
+            <summary> Version 0.0 </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.BIMExpertVersion.VERSION_1_0">
+            <summary> Version 1.0 </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.BIMExpertVersion.VERSION_1_2">
+            <summary> Version 1.2 </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.BIMExpertVersion.VERSION_1_3">
+            <summary> Version 1.3 </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.BIMExpertVersion.VERSION_1_4">
+            <summary> Version 1.4 </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.BIMExpertVersion.VERSION_1_5">
+            <summary> Version 1.5 </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.BIMExpertVersion.VERSION_2_0">
+            <summary> Version 2.0 </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.BIMExpertVersion.VERSION_2_1">
+            <summary> Version 2.1 </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.BIMExpertVersion.VERSION_2_2">
+            <summary> Version 2.2 </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.BIMExpertVersion.VERSION_2_3">
+            <summary> Version 2.3 </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.BIMExpertVersion.VERSION_2_4">
+            <summary> Version 2.4 </summary>
+        </member>
+        <member name="F:BuildSoft.BIMExpert.BIMExpertVersion.VERSION_2_5">
+            <summary> Version 2.5 </summary>
+        </member>
+    </members>
+</doc>

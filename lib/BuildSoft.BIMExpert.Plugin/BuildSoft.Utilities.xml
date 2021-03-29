@@ -1,0 +1,3409 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BuildSoft.Utilities</name>
+    </assembly>
+    <members>
+        <member name="T:BuildSoft.Comparers.DoubleComparer">
+            <summary>
+            Compares two double with a given precision.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Comparers.DoubleComparer.#ctor(System.Double)">
+            <summary>
+            Create a new double comparer based on the provided precision.
+            </summary>
+            <param name="precision">precision (or 1e-6)</param>
+        </member>
+        <member name="M:BuildSoft.Comparers.DoubleComparer.Equals(System.Double,System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="M:BuildSoft.Comparers.DoubleComparer.GetHashCode(System.Double)">
+            <inheritdoc />
+        </member>
+        <member name="T:BuildSoft.Comparers.DoubleExtension">
+            <summary>
+            Extension methods for comparing doubles.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Comparers.DoubleExtension.IsSmallerThanOrEqualTo(System.Double,System.Double,System.Double)">
+            <summary>
+            Checks that a value is smaller than or equal to a given value within the given precision.
+            </summary>
+            <param name="value"></param>
+            <param name="valueToCompare"></param>
+            <param name="precision"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Comparers.DoubleExtension.IsSmallerThanOrEqualToZero(System.Double,System.Double)">
+            <summary>
+            Checks that a value is smaller than or equal to zero within the given precision.
+            </summary>
+            <param name="value"></param>
+            <param name="precision"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Comparers.DoubleExtension.IsSmallerThan(System.Double,System.Double,System.Double)">
+            <summary>
+            Checks that a value is smaller than a given value within the given precision.
+            </summary>
+            <param name="value"></param>
+            <param name="valueToCompare"></param>
+            <param name="precision"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Comparers.DoubleExtension.IsSmallerThanZero(System.Double,System.Double)">
+            <summary>
+            Checks that a value is smaller than zero within the given precision.
+            </summary>
+            <param name="value"></param>
+            <param name="precision"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Comparers.DoubleExtension.IsGreaterThanOrEqualTo(System.Double,System.Double,System.Double)">
+            <summary>
+            Checks that a value is greater than or equal to a given value within the given precision.
+            </summary>
+            <param name="value"></param>
+            <param name="valueToCompare"></param>
+            <param name="precision"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Comparers.DoubleExtension.IsGreaterThanOrEqualToZero(System.Double,System.Double)">
+            <summary>
+            Checks that a value is greater than or equal to zero within the given precision.
+            </summary>
+            <param name="value"></param>
+            <param name="precision"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Comparers.DoubleExtension.IsGreaterThan(System.Double,System.Double,System.Double)">
+            <summary>
+            Checks that a value is greater than a given value within the given precision.
+            </summary>
+            <param name="value"></param>
+            <param name="valueToCompare"></param>
+            <param name="precision"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Comparers.DoubleExtension.IsGreaterThanZero(System.Double,System.Double)">
+            <summary>
+            Checks that a value is greater than zero within the given precision.
+            </summary>
+            <param name="value"></param>
+            <param name="precision"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Comparers.DoubleExtension.IsNotEqualTo(System.Double,System.Double,System.Double)">
+            <summary>
+            Checks that the value is not equal to the given value within a given precision.
+            </summary>
+            <param name="value"></param>
+            <param name="valueToCompare"></param>
+            <param name="precision"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Comparers.DoubleExtension.IsNotEqualToZero(System.Double,System.Double)">
+            <summary>
+            Checks that the value is not equal to zero within a given precision.
+            </summary>
+            <param name="value"></param>
+            <param name="precision"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Comparers.DoubleExtension.IsEqualTo(System.Double,System.Double,System.Double)">
+            <summary>
+            Checks that the value is equal to the given value within a given precision.
+            </summary>
+            <param name="value"></param>
+            <param name="valueToCompare"></param>
+            <param name="precision"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Comparers.DoubleExtension.IsEqualToZero(System.Double,System.Double)">
+            <summary>
+            Checks that the value is equal to zero within a given precision.
+            </summary>
+            <param name="value"></param>
+            <param name="precision"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Comparers.DoubleExtension.IsBetween(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Checks that the value is between the provided values.
+            </summary>
+            <param name="value"></param>
+            <param name="valueToCompare1"></param>
+            <param name="valueToCompare2"></param>
+            <param name="precision"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Comparers.DoubleExtension.IsBetweenOrEqualTo(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Checks that the value is between or equal to the provided values.
+            </summary>
+            <param name="value"></param>
+            <param name="valueToCompare1"></param>
+            <param name="valueToCompare2"></param>
+            <param name="precision"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Comparers.DoubleExtension.HasSameSignAs(System.Double,System.Double)">
+            <summary>
+            Checks if both values have the same sign.
+            </summary>
+            <param name="value"></param>
+            <param name="valueToCompare"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BuildSoft.Comparers.ListEqualityComparer`1">
+            <inheritdoc />
+        </member>
+        <member name="M:BuildSoft.Comparers.ListEqualityComparer`1.#ctor(System.Collections.Generic.IEqualityComparer{`0})">
+            <inheritdoc />
+        </member>
+        <member name="M:BuildSoft.Comparers.ListEqualityComparer`1.GetHashCode(System.Collections.Generic.List{`0})">
+            <inheritdoc />
+        </member>
+        <member name="M:BuildSoft.Comparers.ListEqualityComparer`1.EqualsWhenBothNotNull(System.Collections.Generic.List{`0},System.Collections.Generic.List{`0})">
+            <inheritdoc />
+        </member>
+        <member name="T:BuildSoft.Comparers.ReferenceTypeEqualityComparer`1">
+            <summary>
+            Performs the null check, then invokes the custom implementation.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:BuildSoft.Comparers.ReferenceTypeEqualityComparer`1.Equals(`0,`0)">
+            <inheritdoc />
+        </member>
+        <member name="M:BuildSoft.Comparers.ReferenceTypeEqualityComparer`1.EqualsWhenBothNotNull(`0,`0)">
+            <summary>
+            Checks equality when x and y are not null.
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BuildSoft.Convert.AngleExtension">
+            <summary>
+            Performs conversions between angle units.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Convert.AngleExtension.FromDegreesToRadians(System.Double)">
+            <summary>
+            Converts an angle from degrees to radians.
+            </summary>
+            <param name="angle">angle in degrees</param>
+            <returns>angle in radians</returns>
+        </member>
+        <member name="M:BuildSoft.Convert.AngleExtension.FromRadiansToDegrees(System.Double)">
+            <summary>
+            Converts an angle from radians to degrees.
+            </summary>
+            <param name="angle">angle in radians</param>
+            <returns>angle in degrees</returns>
+        </member>
+        <member name="T:BuildSoft.Convert.AreaExtension">
+            <summary>
+            Performs conversions between area units.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Convert.AreaExtension.FromMeter2ToMillimeter2(System.Double)">
+            <summary>
+            Converts an area from meter squared to millimeter squared.
+            </summary>
+            <param name="area">area in meter squared</param>
+            <returns>area in millimeter squared</returns>
+        </member>
+        <member name="M:BuildSoft.Convert.AreaExtension.FromMillimeter2ToMeter2(System.Double)">
+            <summary>
+            Converts an area from millimeter squared to meter squared.
+            </summary>
+            <param name="area">area in millimeter squared</param>
+            <returns>area in meter squared</returns>
+        </member>
+        <member name="T:BuildSoft.Convert.ConvertingService">
+            <inheritdoc />
+        </member>
+        <member name="M:BuildSoft.Convert.ConvertingService.#ctor(BuildSoft.Convert.IConverter[])">
+            <summary>
+            Creates a new instance of a converting service using provided converters
+            </summary>
+            <param name="converters">available converters</param>
+        </member>
+        <member name="M:BuildSoft.Convert.ConvertingService.GetConverterOrNull``2">
+            <summary>
+            Can be used by inheritors to get the converter from the list.
+            </summary>
+            <typeparam name="TIn">input type</typeparam>
+            <typeparam name="TOut">output type</typeparam>
+            <returns>converter</returns>
+        </member>
+        <member name="M:BuildSoft.Convert.ConvertingService.GetConverter``2">
+            <inheritdoc />
+        </member>
+        <member name="M:BuildSoft.Convert.ConvertingService.Convert``2(``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:BuildSoft.Convert.ConvertingService.Update``2(``0,``1)">
+            <inheritdoc />
+        </member>
+        <member name="T:BuildSoft.Convert.DelegateConverter`2">
+            <inheritdoc />
+        </member>
+        <member name="M:BuildSoft.Convert.DelegateConverter`2.#ctor(System.Func{`0,`1},System.Action{`0,`1})">
+            <summary>
+            Creates a new converter that uses the provided function delegate.
+            </summary>
+            <param name="convertFunc">function delegate to execute on converting</param>
+            <param name="updateAction">action to execute when updating</param>
+        </member>
+        <member name="M:BuildSoft.Convert.DelegateConverter`2.Convert(`0)">
+            <inheritdoc />
+        </member>
+        <member name="M:BuildSoft.Convert.DelegateConverter`2.Update(`0,`1)">
+            <inheritdoc />
+        </member>
+        <member name="T:BuildSoft.Convert.DoubleExtension">
+            <summary>
+            Provide simple conversion helpers for doubles.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Convert.DoubleExtension.Round(System.Double,System.Int32)">
+            <summary>
+            Rounds a double-precision floating-point value to a specified number of fractional digits.
+            </summary>
+            <param name="value"></param>
+            <param name="decimals"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Convert.DoubleExtension.Abs(System.Double)">
+            <summary>
+            Returns the absolute value of a double-precision floating-point number.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Convert.DoubleExtension.ClampMin(System.Double,System.Double)">
+            <summary>
+            Returns the value or the minimum value when smaller.
+            </summary>
+            <param name="value"></param>
+            <param name="min"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Convert.DoubleExtension.ClampMax(System.Double,System.Double)">
+            <summary>
+            Returns the value or the maximum value when larger.
+            </summary>
+            <param name="value"></param>
+            <param name="max"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Convert.DoubleExtension.Clamp(System.Double,System.Double,System.Double)">
+            <summary>
+            Return the value, restricted to the provided range.
+            </summary>
+            <param name="value"></param>
+            <param name="min"></param>
+            <param name="max"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BuildSoft.Convert.ForceExtension">
+            <summary>
+            Performs conversions between force units.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Convert.ForceExtension.FromKiloNewtonToNewton(System.Double)">
+            <summary>
+            Converts a force from kilonewton to newton.
+            </summary>
+            <param name="force">force in kilonewton</param>
+            <returns>force in newton</returns>
+        </member>
+        <member name="M:BuildSoft.Convert.ForceExtension.FromNewtonToKiloNewton(System.Double)">
+            <summary>
+            Converts a force from newton to kilonewton.
+            </summary>
+            <param name="force">force in newton</param>
+            <returns>force in kilonewton</returns>
+        </member>
+        <member name="T:BuildSoft.Convert.ForcePerAreaExtension">
+            <summary>
+            Performs conversions between force per area units.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Convert.ForcePerAreaExtension.FromKiloNewtonPerMeter2ToNewtonPerMeter2(System.Double)">
+            <summary>
+            Converts a force per area from kilonewton per meter squared to newton per meter squared.
+            </summary>
+            <param name="forcePerArea">force per area in kilonewton per meter squared</param>
+            <returns>force per area in newton per meter squared</returns>
+        </member>
+        <member name="M:BuildSoft.Convert.ForcePerAreaExtension.FromNewtonPerMeter2ToKiloNewtonPerMeter2(System.Double)">
+            <summary>
+            Converts a force per area from newton per meter squared to kilonewton per meter squared.
+            </summary>
+            <param name="forcePerArea">force per area in newton per meter squared</param>
+            <returns>force per area in kilonewton per meter squared</returns>
+        </member>
+        <member name="T:BuildSoft.Convert.ForcePerAreaPerLengthExtension">
+            <summary>
+            Performs conversions between force per area and per length units (e.g. stiffness for area displacement).
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Convert.ForcePerAreaPerLengthExtension.FromKiloNewtonPerMeter2PerMeterToNewtonPerMeter2PerMeter(System.Double)">
+            <summary>
+            Converts a force per area and per length from kilonewton per meter squared and per meter [kN/m² / m] to newton per meter squared and per meter [N/m² / m].
+            </summary>
+            <param name="forcePerAreaPerLength">force per area and per length in kilonewton per meter squared and per meter [kN/m² / m]</param>
+            <returns>force per area and per length in newton per meter squared and per meter [N/m² / m]</returns>
+        </member>
+        <member name="M:BuildSoft.Convert.ForcePerAreaPerLengthExtension.FromNewtonPerMeter2PerMeterToKiloNewtonPerMeter2PerMeter(System.Double)">
+            <summary>
+            Converts a force per area and per length from newton per meter squared and per meter [N/m² / m] to kilonewton per meter squared and per meter [kN/m² / m].
+            </summary>
+            <param name="forcePerAreaPerLength">force per area and per length in newton per meter squared and per meter [N/m² / m]</param>
+            <returns>force per area and per length in kilonewton per meter squared and per meter [kN/m² / m]</returns>
+        </member>
+        <member name="T:BuildSoft.Convert.ForcePerLengthExtension">
+            <summary>
+            Performs conversions between force per length units.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Convert.ForcePerLengthExtension.FromKiloNewtonPerMeterToNewtonPerMeter(System.Double)">
+            <summary>
+            Converts a force per length from kilonewton per meter [kN / m] to newton per meter [N / m].
+            </summary>
+            <param name="forcePerLength">force per length in kilonewton per meter [kN / m]</param>
+            <returns>force per length in newton per meter [N / m]</returns>
+        </member>
+        <member name="M:BuildSoft.Convert.ForcePerLengthExtension.FromNewtonPerMeterToKiloNewtonPerMeter(System.Double)">
+            <summary>
+            Converts a force per length from newton per meter [N / m] to kilonewton per meter [kN / m].
+            </summary>
+            <param name="forcePerLength">force per length in newton per meter [N / m]</param>
+            <returns>force per length in kilonewton per meter [kN / m]</returns>
+        </member>
+        <member name="T:BuildSoft.Convert.ForcePerLengthPerLengthExtension">
+            <summary>
+            Performs conversions between force per length and per length units (e.g. stiffness for line displacement).
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Convert.ForcePerLengthPerLengthExtension.FromKiloNewtonPerMeterPerMeterToNewtonPerMeterPerMeter(System.Double)">
+            <summary>
+            Converts a force per length and per length from kilonewton per meter and per meter [kN/m / m] to newton per meter and per meter [N/m / m].
+            </summary>
+            <param name="forcePerLengthPerLength">force per length and per length in kilonewton per meter and per meter [kN/m / m]</param>
+            <returns>force per length and per length in newton per meter and per meter [N/m / m]</returns>
+        </member>
+        <member name="M:BuildSoft.Convert.ForcePerLengthPerLengthExtension.FromNewtonPerMeterPerMeterToKiloNewtonPerMeterPerMeter(System.Double)">
+            <summary>
+            Converts a force per length and per length from newton per meter and per meter [N/m / m] to kilonewton per meter and per meter [kN/m / m].
+            </summary>
+            <param name="forcePerLengthPerLength">force per length and per length in newton per meter and per meter [N/m / m]</param>
+            <returns>force per length and per length in kilonewton per meter and per meter [kN/m / m]</returns>
+        </member>
+        <member name="T:BuildSoft.Convert.GuidExtension">
+            <summary>
+            Contains extension methods for guid.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Convert.GuidExtension.ToGuid(System.Int64)">
+            <summary>
+            Converts a long to a guid.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Convert.GuidExtension.ToGuid(System.Int32)">
+            <summary>
+            Converts a long to a guid.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BuildSoft.Convert.IConverter">
+            <summary>
+            Base interface for all converters
+            </summary>
+        </member>
+        <member name="T:BuildSoft.Convert.IConverter`2">
+            <summary>
+            Used to convert one type of elements to another.
+            </summary>
+            <typeparam name="TIn">type to convert from</typeparam>
+            <typeparam name="TOut">type to convert to</typeparam>
+        </member>
+        <member name="M:BuildSoft.Convert.IConverter`2.Convert(`0)">
+            <summary>
+            Converts a single element.
+            </summary>
+            <param name="obj">obj object</param>
+            <returns>converted object</returns>
+        </member>
+        <member name="M:BuildSoft.Convert.IConverter`2.Update(`0,`1)">
+            <summary>
+            Updates the information in an existing object.
+            </summary>
+            <param name="obj">input object</param>
+            <param name="existing">existing object</param>
+        </member>
+        <member name="T:BuildSoft.Convert.IConvertingService">
+            <summary>
+            Can provide converting services.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Convert.IConvertingService.GetConverter``2">
+            <summary>
+            Gets the converter for the given input and output types.
+            </summary>
+            <typeparam name="TIn">input type</typeparam>
+            <typeparam name="TOut">output type</typeparam>
+            <returns>a converter</returns>
+            <exception cref="T:System.InvalidOperationException">when no corresponding converter is found</exception>
+        </member>
+        <member name="M:BuildSoft.Convert.IConvertingService.Convert``2(``0)">
+            <summary>
+            Converts a single element.
+            </summary>
+            <param name="obj">obj object</param>
+            <returns>converted object</returns>
+            <exception cref="T:System.InvalidOperationException">when no corresponding converter is found</exception>
+        </member>
+        <member name="M:BuildSoft.Convert.IConvertingService.Update``2(``0,``1)">
+            <summary>
+            Updates the information in an existing object.
+            </summary>
+            <param name="obj">input object</param>
+            <param name="existing">existing object</param>
+        </member>
+        <member name="T:BuildSoft.Convert.IntExtension">
+            <summary>
+            Provide simple conversion helpers for integers.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Convert.IntExtension.Abs(System.Int32)">
+            <summary>
+            Returns the absolute value of a 32-bit signed integer.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Convert.IntExtension.ClampMin(System.Int32,System.Int32)">
+            <summary>
+            Returns the value or the minimum value when smaller.
+            </summary>
+            <param name="value"></param>
+            <param name="min"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Convert.IntExtension.ClampMax(System.Int32,System.Int32)">
+            <summary>
+            Returns the value or the maximum value when larger.
+            </summary>
+            <param name="value"></param>
+            <param name="max"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Convert.IntExtension.Clamp(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Return the value, restricted to the provided range.
+            </summary>
+            <param name="value"></param>
+            <param name="min"></param>
+            <param name="max"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BuildSoft.Convert.LengthExtension">
+            <summary>
+            Performs conversions between length (or distance) units.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Convert.LengthExtension.FromMeterToMillimeter(System.Double)">
+            <summary>
+            Converts a length from meter to millimeter.
+            </summary>
+            <param name="length">length in meter</param>
+            <returns>length in millimeter</returns>
+        </member>
+        <member name="M:BuildSoft.Convert.LengthExtension.FromMillimeterToMeter(System.Double)">
+            <summary>
+            Converts a length from millimeter to meter.
+            </summary>
+            <param name="length">length in millimeter</param>
+            <returns>length in meter</returns>
+        </member>
+        <member name="M:BuildSoft.Convert.LengthExtension.FromMeterToInch(System.Double)">
+            <summary>
+            Converts a length from meter to inch.
+            </summary>
+            <param name="length">length in meter</param>
+            <returns>length in inch</returns>
+        </member>
+        <member name="M:BuildSoft.Convert.LengthExtension.FromInchToMeter(System.Double)">
+            <summary>
+            Converts a length from inch to meter.
+            </summary>
+            <param name="length">length in inch</param>
+            <returns>length in meter</returns>
+        </member>
+        <member name="T:BuildSoft.Convert.SameTextEnumConverter`2">
+            <inheritdoc />
+            <summary>
+            Converts two enums that are similar, i.e. contain the same elements, ignoring case.
+            </summary>
+            <exception cref="T:System.ArgumentException">when the target enum does not have the same element</exception>
+        </member>
+        <member name="M:BuildSoft.Convert.SameTextEnumConverter`2.Convert(`0)">
+            <inheritdoc />
+        </member>
+        <member name="M:BuildSoft.Convert.SameTextEnumConverter`2.Update(`0,`1)">
+            <inheritdoc />
+            <exception cref="T:System.InvalidOperationException">can't update existing enumeration values</exception>
+        </member>
+        <member name="T:BuildSoft.Convert.SameValueEnumConverter`2">
+            <inheritdoc />
+            <summary>
+            Converts two enums that share the same integer values.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Convert.SameValueEnumConverter`2.Convert(`0)">
+            <inheritdoc />
+        </member>
+        <member name="M:BuildSoft.Convert.SameValueEnumConverter`2.Update(`0,`1)">
+            <inheritdoc />
+            <exception cref="T:System.InvalidOperationException">can't update existing enumeration values</exception>
+        </member>
+        <member name="T:BuildSoft.Convert.StressExtension">
+            <summary>
+            Performs conversions between stress (or pressure, force per area) units.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Convert.StressExtension.FromPsiToPa(System.Double)">
+            <summary>
+            Converts a stress from psi to pascal.
+            </summary>
+            <param name="stress">stress in psi</param>
+            <returns>stress in pascal</returns>
+        </member>
+        <member name="M:BuildSoft.Convert.StressExtension.FromPaToPsi(System.Double)">
+            <summary>
+            Converts a stress from pascal to psi.
+            </summary>
+            <param name="stress">stress in pascal</param>
+            <returns>stress in psi</returns>
+        </member>
+        <member name="M:BuildSoft.Convert.StressExtension.FromKsiToPa(System.Double)">
+            <summary>
+            Converts a stress from pascal to ksi.
+            </summary>
+            <param name="stress">stress in ksi</param>
+            <returns>stress in pascal</returns>
+        </member>
+        <member name="M:BuildSoft.Convert.StressExtension.FromPaToKsi(System.Double)">
+            <summary>
+            Converts a stress from pascal to ksi.
+            </summary>
+            <param name="stress">stress in pascal</param>
+            <returns>stress in ksi</returns>
+        </member>
+        <member name="T:BuildSoft.Convert.TemperatureExtension">
+            <summary>
+            Performs conversions between temperature units.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Convert.TemperatureExtension.FromDegreesCelsiusToKelvins(System.Double)">
+            <summary>
+            Converts a temperature from degrees Celsius to Kelvins.
+            </summary>
+            <param name="temperature">temperature in degrees Celsius</param>
+            <returns>temperature in Kelvins</returns>
+        </member>
+        <member name="M:BuildSoft.Convert.TemperatureExtension.FromKelvinsToDegreesCelsius(System.Double)">
+            <summary>
+            Converts a temperature from Kelvins to degrees Celsius.
+            </summary>
+            <param name="temperature">temperature in Kelvins</param>
+            <returns>temperature in degrees Celsius</returns>
+        </member>
+        <member name="T:BuildSoft.Convert.TimeExtension">
+            <summary>
+            Performs conversions between time units.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Convert.TimeExtension.FromSecondsToMinutes(System.Double)">
+            <summary>
+            Converts a timespan from seconds to minutes.
+            </summary>
+            <param name="seconds">time span in seconds</param>
+            <returns>time span in minutes</returns>
+        </member>
+        <member name="M:BuildSoft.Convert.TimeExtension.FromSecondsToHours(System.Double)">
+            <summary>
+            Converts a timespan from seconds to hours.
+            </summary>
+            <param name="seconds">time span in seconds</param>
+            <returns>time span in hours</returns>
+        </member>
+        <member name="M:BuildSoft.Convert.TimeExtension.FromMinutesToSeconds(System.Double)">
+            <summary>
+            Converts a timespan from minutes to seconds.
+            </summary>
+            <param name="minutes">time span in minutes</param>
+            <returns>time span in seconds</returns>
+        </member>
+        <member name="M:BuildSoft.Convert.TimeExtension.FromMinutesToHours(System.Double)">
+            <summary>
+            Converts a timespan from minutes to hours.
+            </summary>
+            <param name="minutes">time span in minutes</param>
+            <returns>time span in hours</returns>
+        </member>
+        <member name="M:BuildSoft.Convert.TimeExtension.FromHoursToSeconds(System.Double)">
+            <summary>
+            Converts a timespan from hours to seconds.
+            </summary>
+            <param name="hours">time span in hours</param>
+            <returns>time span in seconds</returns>
+        </member>
+        <member name="M:BuildSoft.Convert.TimeExtension.FromHoursToMinutes(System.Double)">
+            <summary>
+            Converts a timespan from hours to minutes.
+            </summary>
+            <param name="hours">time span in hours</param>
+            <returns>time span in minutes</returns>
+        </member>
+        <member name="M:BuildSoft.Convert.TimeExtension.FromSeconds(System.Double)">
+            <summary>
+            Converts seconds to a timespan.
+            </summary>
+            <param name="seconds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Convert.TimeExtension.FromMinutes(System.Double)">
+            <summary>
+            Converts minutes to a timespan.
+            </summary>
+            <param name="hours"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Convert.TimeExtension.FromHours(System.Double)">
+            <summary>
+            Converts hours to a timespan.
+            </summary>
+            <param name="hours"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Convert.TimeExtension.FromDays(System.Double)">
+            <summary>
+            Converts days to a timespan.
+            </summary>
+            <param name="days"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BuildSoft.Convert.TorqueExtension">
+            <summary>
+            Performs conversions between torque (or moment) units
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Convert.TorqueExtension.FromKiloNewtonMeterToNewtonMeter(System.Double)">
+            <summary>
+            Converts a moment from kilonewtonmeter to newtonmeter.
+            </summary>
+            <param name="moment">moment in kilonewtonmeter</param>
+            <returns>moment in newtonmeter</returns>
+        </member>
+        <member name="M:BuildSoft.Convert.TorqueExtension.FromNewtonMeterToKiloNewtonMeter(System.Double)">
+            <summary>
+            Converts a moment from kilonewtonmeter to newtonmeter.
+            </summary>
+            <param name="moment">moment in newtonmeter</param>
+            <returns>moment in kilonewtonmeter</returns>
+        </member>
+        <member name="T:BuildSoft.Convert.TorquePerAngleExtension">
+            <summary>
+            Performs conversions between torque per angle (or moment per angle) units
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Convert.TorquePerAngleExtension.FromKiloNewtonMeterPerRadiansToNewtonMeterPerRadians(System.Double)">
+            <summary>
+            Converts a moment per angle from kilonewtonmeter per radians [kN·m / rad] to newtonmeter per radians [N·m / rad].
+            </summary>
+            <param name="momentPerAngle">moment per angle in kilonewtonmeter per radians [kN·m / rad]</param>
+            <returns>moment per angle in newtonmeter per radians [N·m / rad]</returns>
+        </member>
+        <member name="M:BuildSoft.Convert.TorquePerAngleExtension.FromNewtonMeterPerRadiansToKiloNewtonMeterPerRadians(System.Double)">
+            <summary>
+            Converts a moment per angle from newtonmeter per radians [N·m / rad] to kilonewtonmeter per radians [kN·m / rad].
+            </summary>
+            <param name="momentPerAngle">moment per angle in newtonmeter per radians [N·m / rad]</param>
+            <returns>moment per angle in kilonewtonmeter per radians [kN·m / rad]</returns>
+        </member>
+        <member name="T:BuildSoft.Convert.TorquePerAnglePerLengthExtension">
+            <summary>
+            Performs conversions between torque per angle and per length (or moment per angle and per length) units (e.g. stiffness for line rotation).
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Convert.TorquePerAnglePerLengthExtension.FromKiloNewtonMeterPerRadiansPerMeterToNewtonMeterPerRadiansPerMeter(System.Double)">
+            <summary>
+            Converts a moment per angle and per length from kilonewtonmeter per radians and per meter [kN·m/rad / m] to newtonmeter per radians and per meter [N·m/rad / m].
+            </summary>
+            <param name="momentPerAnglePerLength">moment per angle and per length in kilonewtonmeter per radians and per meter [kN·m/rad / m]</param>
+            <returns>moment per angle and per length in newtonmeter per radians and per meter [N·m/rad / m]</returns>
+        </member>
+        <member name="M:BuildSoft.Convert.TorquePerAnglePerLengthExtension.FromNewtonMeterPerRadiansPerMeterToKiloNewtonMeterPerRadiansPerMeter(System.Double)">
+            <summary>
+            Converts a moment per angle and per length from newtonmeter per radians and per meter [N·m/rad / m] to kilonewtonmeter per radians and per meter [kN·m/rad / m].
+            </summary>
+            <param name="momentPerAnglePerLength">moment per angle and per length in newtonmeter per radians and per meter [N·m/rad / m]</param>
+            <returns>moment per angle and per length in kilonewtonmeter per radians and per meter [kN·m/rad / m]</returns>
+        </member>
+        <member name="T:BuildSoft.Convert.TorquePerLengthExtension">
+            <summary>
+            Performs conversions between torque per length (or moment per length) units
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Convert.TorquePerLengthExtension.FromKiloNewtonMeterPerMeterToNewtonMeterPerMeter(System.Double)">
+            <summary>
+            Converts a moment per length from kilonewtonmeter per meter [kN·m / m] to newtonmeter per meter [N·m / m].
+            </summary>
+            <param name="momentPerLength">moment per length in kilonewtonmeter per meter [kN·m / m]</param>
+            <returns>moment per length in newtonmeter per meter [N·m / m]</returns>
+        </member>
+        <member name="M:BuildSoft.Convert.TorquePerLengthExtension.FromNewtonMeterPerMeterToKiloNewtonMeterPerMeter(System.Double)">
+            <summary>
+            Converts a moment per length from newtonmeter per meter [N·m / m] to kilonewtonmeter per meter [kN·m / m].
+            </summary>
+            <param name="momentPerLength">moment per length in newtonmeter per meter [N·m / m]</param>
+            <returns>moment per length in kilonewtonmeter per meter [kN·m / m]</returns>
+        </member>
+        <member name="T:BuildSoft.General.DateTimeGenerator">
+            <inheritdoc />
+        </member>
+        <member name="M:BuildSoft.General.DateTimeGenerator.UtcNow">
+            <inheritdoc />
+        </member>
+        <member name="M:BuildSoft.General.DateTimeGenerator.LocalTimeNow">
+            <inheritdoc />
+        </member>
+        <member name="T:BuildSoft.General.DateTimeOffsetGenerator">
+            <inheritdoc />
+        </member>
+        <member name="M:BuildSoft.General.DateTimeOffsetGenerator.UtcNow">
+            <inheritdoc />
+        </member>
+        <member name="M:BuildSoft.General.DateTimeOffsetGenerator.LocalTimeNow">
+            <inheritdoc />
+        </member>
+        <member name="T:BuildSoft.General.ICloneable`1">
+            <summary>
+            Provides methods to clone the instance.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:BuildSoft.General.ICloneable`1.Clone">
+            <summary>
+            Creates a deep clone of the instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BuildSoft.General.IDateTimeGenerator">
+            <summary>
+            Generates special date times.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.General.IDateTimeGenerator.UtcNow">
+            <summary>
+            Creates the current UTC time.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.General.IDateTimeGenerator.LocalTimeNow">
+            <summary>
+            Create the current local time.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BuildSoft.General.IDateTimeOffsetGenerator">
+            <summary>
+            Generates special date times.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.General.IDateTimeOffsetGenerator.UtcNow">
+            <summary>
+            Creates the current UTC time.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.General.IDateTimeOffsetGenerator.LocalTimeNow">
+            <summary>
+            Create the current local time.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BuildSoft.Generators.CloneableClassCloneGenerator`1">
+            <summary>
+            Clone generator for objects implementing the ICloneable interface.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:BuildSoft.Generators.CloneableClassCloneGenerator`1.Clone(`0)">
+            <inheritdoc />
+        </member>
+        <member name="T:BuildSoft.Generators.CloneGenerator`1">
+            <summary>
+            Base class for clone generators
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:BuildSoft.Generators.CloneGenerator`1.Clone(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:BuildSoft.Generators.CloneGenerator`1.Clone(`0)">
+            <inheritdoc />
+        </member>
+        <member name="T:BuildSoft.Generators.ICloneGenerator">
+            <summary>
+            Generates deep clones of the provided object.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Generators.ICloneGenerator.Clone(System.Object)">
+            <summary>
+            Creates a deep clone of the original.
+            </summary>
+            <param name="original"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BuildSoft.Generators.ICloneGenerator`1">
+            <summary>
+            Generates deep clones of the provided object.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:BuildSoft.Generators.ICloneGenerator`1.Clone(`0)">
+            <summary>
+            Creates a deep clone of the original.
+            </summary>
+            <param name="original"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BuildSoft.GenericTypeArgumentException">
+            <summary>
+            Represents errors related to the provided generic type arguments.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.GenericTypeArgumentException.#ctor(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:BuildSoft.Linq.AggregateExtension">
+            <summary>
+            Extensions to supplement the aggregate method.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Linq.AggregateExtension.AggregateOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``0,``0})">
+            <summary>
+            Applies an accumulator function over a sequence.
+            When the sequence is empty the type's default value is returned.
+            </summary>
+            <typeparam name="T">element type</typeparam>
+            <param name="source">source enumerable</param>
+            <param name="func">accumulator function</param>
+            <returns>the result of the accumulated sequence or the default value</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:BuildSoft.Linq.MinMaxExtension">
+            <summary>
+            Extensions for min and max operations.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Linq.MinMaxExtension.Min``1(System.Collections.Generic.IEnumerable{``0},``0)">
+            <summary>
+            Returns the minimum value in a generic sequence with a seed.
+            </summary>
+            <typeparam name="T">element type</typeparam>
+            <param name="source">source</param>
+            <param name="seed">seed value</param>
+            <returns>minimum of the sequence and seed</returns>
+            <exception cref="T:System.ArgumentNullException">the <paramref name="source"/> is null</exception>
+        </member>
+        <member name="M:BuildSoft.Linq.MinMaxExtension.Min``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},``1)">
+            <summary>
+            Returns the minimum value in a generic sequence with a selector and a seed
+            </summary>
+            <typeparam name="TSource">source type</typeparam>
+            <typeparam name="T">target element type</typeparam>
+            <param name="source">source</param>
+            <param name="selector">a transform function to apply to each element</param>
+            <param name="seed">seed value</param>
+            <returns>minimum of the sequence and seed</returns>
+            <exception cref="T:System.ArgumentNullException">either the <paramref name="source"/> or <paramref name="selector"/> is null</exception>
+        </member>
+        <member name="M:BuildSoft.Linq.MinMaxExtension.MinOrDefault``1(System.Collections.Generic.IEnumerable{``0},``0)">
+            <summary>
+            Returns the minimum value in a generic sequence with a default value.
+            </summary>
+            <typeparam name="T">element type</typeparam>
+            <param name="source">source</param>
+            <param name="default">default value in case the source is empty</param>
+            <returns>minimum of the sequence or given default value</returns>
+            <exception cref="T:System.ArgumentNullException">the <paramref name="source"/> is null</exception>
+        </member>
+        <member name="M:BuildSoft.Linq.MinMaxExtension.MinOrDefault``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},``1)">
+            <summary>
+            Returns the minimum value in a generic sequence with a default value.
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <typeparam name="T">element type</typeparam>
+            <param name="source">source</param>
+            <param name="selector">a transform function to apply to each element</param>
+            <param name="default">default value in case the source is empty</param>
+            <returns>minimum of the sequence or given default value</returns>
+            <exception cref="T:System.ArgumentNullException">the <paramref name="source"/> is null</exception>
+        </member>
+        <member name="M:BuildSoft.Linq.MinMaxExtension.Max``1(System.Collections.Generic.IEnumerable{``0},``0)">
+            <summary>
+            Returns the maximum value in a generic sequence with a seed.
+            </summary>
+            <typeparam name="T">element type</typeparam>
+            <param name="source">source enumerable</param>
+            <param name="seed">seed value</param>
+            <returns>maximum of the sequence and seed</returns>
+            <exception cref="T:System.ArgumentNullException">the <paramref name="source"/> is null</exception>
+        </member>
+        <member name="M:BuildSoft.Linq.MinMaxExtension.Max``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},``1)">
+            <summary>
+            Returns the maximum value in a generic sequence with a selector and a seed
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <typeparam name="T">element type</typeparam>
+            <param name="source">source</param>
+            <param name="selector">a transform function to apply to each element</param>
+            <param name="seed">seed value</param>
+            <returns>maximum of the sequence and seed</returns>
+            <exception cref="T:System.ArgumentNullException">either the <paramref name="source"/> or <paramref name="selector"/> is null</exception>
+        </member>
+        <member name="M:BuildSoft.Linq.MinMaxExtension.MaxOrDefault``1(System.Collections.Generic.IEnumerable{``0},``0)">
+            <summary>
+            Returns the maximum value in a generic sequence with a default value.
+            </summary>
+            <typeparam name="T">element type</typeparam>
+            <param name="source">source</param>
+            <param name="default">default value in case the source is empty</param>
+            <returns>maximum of the sequence or given default value</returns>
+            <exception cref="T:System.ArgumentNullException">the <paramref name="source"/> is null</exception>
+        </member>
+        <member name="M:BuildSoft.Linq.MinMaxExtension.MaxOrDefault``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},``1)">
+            <summary>
+            Returns the maximum value in a generic sequence with a default value.
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <typeparam name="T">element type</typeparam>
+            <param name="source">source</param>
+            <param name="selector">a transform function to apply to each element</param>
+            <param name="default">default value in case the source is empty</param>
+            <returns>maximum of the sequence or given default value</returns>
+            <exception cref="T:System.ArgumentNullException">the <paramref name="source"/> is null</exception>
+        </member>
+        <member name="T:BuildSoft.Linq.NullOrEmptyExtension">
+            <summary>
+            Extensions to prevent null or empty sequences in fluent syntax.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Linq.NullOrEmptyExtension.OrEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Returns an empty enumerable when null is provided.
+            </summary>
+            <typeparam name="T">element type</typeparam>
+            <param name="source">source enumerable</param>
+            <returns>the input source or an empty source</returns>
+        </member>
+        <member name="M:BuildSoft.Linq.NullOrEmptyExtension.HasElements``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Returns true when the source has at least one element.
+            </summary>
+            <typeparam name="T">element type</typeparam>
+            <param name="source">source enumerable</param>
+            <returns>true when not null and not empty</returns>
+        </member>
+        <member name="M:BuildSoft.Linq.NullOrEmptyExtension.IsNullOrEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Returns true when the source is null or has no elements.
+            </summary>
+            <typeparam name="T">element type</typeparam>
+            <param name="source">source enumerable</param>
+            <returns>true when null or empty</returns>
+        </member>
+        <member name="M:BuildSoft.Linq.NullOrEmptyExtension.IsEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Returns true when the source has no elements.
+            </summary>
+            <typeparam name="T">element type</typeparam>
+            <param name="source">source enumerable</param>
+            <returns>true when empty</returns>
+            <exception cref="T:System.ArgumentNullException">source can't be null</exception>
+        </member>
+        <member name="T:BuildSoft.Random.IGuidGenerator">
+            <summary>
+            Interface to generate a new guid.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Random.IGuidGenerator.Create">
+            <summary>
+            Creates a new guid.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BuildSoft.Random.RandomGuidGenerator">
+            <inheritdoc />
+        </member>
+        <member name="M:BuildSoft.Random.RandomGuidGenerator.Create">
+            <inheritdoc />
+        </member>
+        <member name="T:BuildSoft.Random.SequentialGuidGenerator">
+            <inheritdoc />
+        </member>
+        <member name="M:BuildSoft.Random.SequentialGuidGenerator.#ctor(System.Int64)">
+            <summary>
+            Creates a new instance
+            </summary>
+            <param name="startValue"></param>
+        </member>
+        <member name="M:BuildSoft.Random.SequentialGuidGenerator.Create">
+            <inheritdoc />
+        </member>
+        <member name="T:BuildSoft.Text.CasingExtension">
+            <summary>
+            String extension methods to change the casing of a string to a different convention.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Text.CasingExtension.ToCamelCase(System.String)">
+            <summary>
+            Converts the name to camel case.
+            </summary>
+            <param name="name">name to convert</param>
+            <returns>camel cased name</returns>
+        </member>
+        <member name="M:BuildSoft.Text.CasingExtension.ToPascalCase(System.String)">
+            <summary>
+            Converts the name to pascal case.
+            </summary>
+            <param name="name">name to convert</param>
+            <returns>pascal cased name</returns>
+        </member>
+        <member name="T:BuildSoft.Text.ConvertToStringExtension">
+            <summary>
+            Contains extensions to convert objects to a string.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Text.ConvertToStringExtension.ConvertToString(System.Int32,BuildSoft.Text.Culture)">
+            <summary>
+            Returns a string representation of a <see cref="T:System.Int32"/> value.
+            </summary>
+            <param name="value">value to convert</param>
+            <param name="culture">current or invariant culture</param>
+            <returns>string representation</returns>
+        </member>
+        <member name="M:BuildSoft.Text.ConvertToStringExtension.ConvertToString(System.Int64,BuildSoft.Text.Culture)">
+            <summary>
+            Returns a string representation of a <see cref="T:System.Int64"/> value.
+            </summary>
+            <param name="value">value to convert</param>
+            <param name="culture">current or invariant culture</param>
+            <returns>string representation</returns>
+        </member>
+        <member name="M:BuildSoft.Text.ConvertToStringExtension.ConvertToString(System.Double,BuildSoft.Text.Culture)">
+            <summary>
+            Returns a string representation of a <see cref="T:System.Double"/> value.
+            </summary>
+            <param name="value">value to convert</param>
+            <param name="culture">current or invariant culture</param>
+            <returns>string representation e.g. 1.23</returns>
+        </member>
+        <member name="M:BuildSoft.Text.ConvertToStringExtension.ConvertToExponentialNotation(System.Double,System.Int32,BuildSoft.Text.Culture)">
+            <summary>
+            Returns a string representation of a <see cref="T:System.Double"/> value formatted as an exponent.
+            </summary>
+            <param name="value">value to convert</param>
+            <param name="digitCount">number of digits after the decimal point in the base number</param>
+            <param name="culture">current or invariant culture</param>
+            <returns>string representation, e.g. 1.23E+004</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">should not be negative</exception>
+        </member>
+        <member name="M:BuildSoft.Text.ConvertToStringExtension.ConvertToFixedPointNotation(System.Double,System.Int32,BuildSoft.Text.Culture)">
+            <summary>
+            Returns a string representation of a <see cref="T:System.Double"/> value formatted using fixed-point notation.
+            </summary>
+            <param name="value">value to convert</param>
+            <param name="digitCount">number of digits after the decimal point</param>
+            <param name="culture">current or invariant culture</param>
+            <returns>string representation, e.g. 1.234</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">should not be negative</exception>
+        </member>
+        <member name="M:BuildSoft.Text.ConvertToStringExtension.ConvertToString(System.DateTime,BuildSoft.Text.Culture)">
+            <summary>
+            Returns a string representation of a <see cref="T:System.DateTime"/> value.
+            </summary>
+            <param name="value">value to convert</param>
+            <param name="culture">current or invariant culture</param>
+            <returns>string representation</returns>
+        </member>
+        <member name="M:BuildSoft.Text.ConvertToStringExtension.ConvertToIso8601(System.DateTime)">
+            <summary>
+            Returns a string representation of a <see cref="T:System.DateTime"/> value conforming to ISO8601 standards.
+            </summary>
+            <param name="value">value to convert</param>
+            <returns>ISO8601 string representation</returns>
+        </member>
+        <member name="M:BuildSoft.Text.ConvertToStringExtension.ConvertToString(System.TimeSpan,BuildSoft.Text.Culture)">
+            <summary>
+            Returns a string representation of a TimeSpan value.
+            </summary>
+            <param name="value"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Text.ConvertToStringExtension.ConvertToString(System.Boolean)">
+            <summary>
+            Returns a string representation of a <see cref="T:System.Boolean"/> value.
+            </summary>
+            <param name="value">value to convert</param>
+            <returns>string representation</returns>
+        </member>
+        <member name="M:BuildSoft.Text.ConvertToStringExtension.ConvertToString(System.Guid)">
+            <summary>
+            Returns a string representation of a a <see cref="T:System.Guid"/> value.
+            </summary>
+            <param name="value">value to convert</param>
+            <returns>string representation</returns>
+        </member>
+        <member name="T:BuildSoft.Text.Culture">
+            <summary>
+            Describes the culture to be used when formatting and parsing.
+            </summary>
+        </member>
+        <member name="F:BuildSoft.Text.Culture.Invariant">
+            <summary>
+            Represents the invariant culture.
+            </summary>
+        </member>
+        <member name="F:BuildSoft.Text.Culture.Current">
+            <summary>
+            Represents the current thread culture.
+            </summary>
+        </member>
+        <member name="T:BuildSoft.Text.EqualityExtension">
+            <summary>
+            Contains extensions to facilitate equality checks
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Text.EqualityExtension.EqualsIgnoreCase(System.String,System.String)">
+            <summary>
+            Determines whether two strings have the same value ignoring the case.
+            </summary>
+            <param name="text">this text</param>
+            <param name="other">other text</param>
+            <returns>true if texts are equal ignoring case</returns>
+        </member>
+        <member name="M:BuildSoft.Text.EqualityExtension.StartsWithIgnoreCase(System.String,System.String)">
+            <summary>
+            Determines whether the beginning of this string matches the other string
+            ignoring the case.
+            </summary>
+            <param name="text">this text</param>
+            <param name="other">other text</param>
+            <returns>true if beginning matches</returns>
+        </member>
+        <member name="M:BuildSoft.Text.EqualityExtension.EndsWithIgnoreCase(System.String,System.String)">
+            <summary>
+            Determines whether the end of this string matches the other string
+            ignoring the case.
+            </summary>
+            <param name="text">this text</param>
+            <param name="other">other text</param>
+            <returns>true if beginning matches</returns>
+        </member>
+        <member name="T:BuildSoft.Text.FormatExtension">
+            <summary>
+            Contains extensions to help format text.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Text.FormatExtension.ToSeparatedString(System.String,System.String[])">
+            <summary>
+            Concatenates all the items in the array using the provided separator.
+            </summary>
+            <param name="separator">string to use as separator</param>
+            <param name="items">strings to concatenate</param>
+            <returns>concatenated string with separators</returns>
+        </member>
+        <member name="M:BuildSoft.Text.FormatExtension.ToSeparatedString(System.Char,System.String[])">
+            <summary>
+            Concatenates all the items in the array using the provided separator.
+            </summary>
+            <param name="separator">character to use as separator</param>
+            <param name="items">strings to concatenate</param>
+            <returns>concatenated string with separators</returns>
+        </member>
+        <member name="M:BuildSoft.Text.FormatExtension.ToSeparatedString(System.Collections.Generic.IEnumerable{System.String},System.String)">
+            <summary>
+            Concatenates all the items in the enumerable using the provided separator.
+            </summary>
+            <param name="items">strings to concatenate</param>
+            <param name="separator">string to use as separator</param>
+            <returns>concatenated string with separators</returns>
+        </member>
+        <member name="M:BuildSoft.Text.FormatExtension.RemoveMnemonic(System.String)">
+            <summary>
+            Removes the mnemonic (&amp;) from the string.
+            </summary>
+            <param name="text">text to clean</param>
+            <returns>text without mnemonics</returns>
+        </member>
+        <member name="T:BuildSoft.Text.LineExtension">
+            <summary>
+            Contains extension methods to work with lines.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Text.LineExtension.ToLines(System.String)">
+            <summary>
+            Converts a text into the individual lines.
+            </summary>
+            <param name="text">text to convert</param>
+            <returns>individual lines</returns>
+        </member>
+        <member name="M:BuildSoft.Text.LineExtension.GetNumberOfLines(System.String,System.Boolean)">
+            <summary>
+            Counts the number of lines in a text.
+            </summary>
+            <param name="text">text to count</param>
+            <param name="skipEmpty">flag to skip counting empty lines</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Text.LineExtension.IsMultipleLines(System.String)">
+            <summary>
+            Checks if a text has more than one line.
+            </summary>
+            <param name="text">text to check</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Text.LineExtension.IsSingleLine(System.String)">
+            <summary>
+            Checks if the text fits on a single line.
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Text.LineExtension.Indent(System.String,System.String,System.Boolean)">
+            <summary>
+            Indents the text with the given string.
+            </summary>
+            <param name="text">text to indent</param>
+            <param name="indentationString">text to prefix each line</param>
+            <param name="skipEmptyLines">leave empty lines</param>
+            <returns>the indented string</returns>
+        </member>
+        <member name="M:BuildSoft.Text.LineExtension.TrimNewLineAtEnd(System.String,System.Boolean)">
+            <summary>
+            Removes trailing end line.
+            </summary>
+            <param name="text">text to trim</param>
+            <param name="onlyLastEndLine">true to remove just one end line, false to remove all end lines</param>
+            <returns>text without end line</returns>
+        </member>
+        <member name="T:BuildSoft.Text.ParseExtension">
+            <summary>
+            Contains extension methods used when parsing strings.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Text.ParseExtension.TryParseInt(System.String,System.Int32@,BuildSoft.Text.Culture)">
+            <summary>
+            Parses a string to an integer.
+            </summary>
+            <param name="text">text to parse</param>
+            <param name="result">output number</param>
+            <param name="culture">current or invariant culture</param>
+            <returns>true if the parsing succeeds</returns>
+        </member>
+        <member name="M:BuildSoft.Text.ParseExtension.TryParseDouble(System.String,System.Double@,BuildSoft.Text.Culture)">
+            <summary>
+            Parses a string to a double.
+            </summary>
+            <param name="text">text to parse</param>
+            <param name="result">output number</param>
+            <param name="culture">current or invariant culture</param>
+            <returns>true if the parsing succeeds</returns>
+        </member>
+        <member name="M:BuildSoft.Text.ParseExtension.TryParseDateTime(System.String,System.DateTime@,BuildSoft.Text.Culture)">
+            <summary>
+            Parses a string to a date time.
+            </summary>
+            <param name="text">text to parse</param>
+            <param name="result">output date time</param>
+            <param name="culture">current or invariant culture</param>
+            <returns>true if the parsing succeeds</returns>
+        </member>
+        <member name="M:BuildSoft.Text.ParseExtension.TryParseTimeSpan(System.String,System.TimeSpan@,BuildSoft.Text.Culture)">
+            <summary>
+            Parses a string to a timespan.
+            </summary>
+            <param name="text">text to parse</param>
+            <param name="result">output timespan</param>
+            <param name="culture">current or invariant culture</param>
+            <returns>true if the parsing succeeds</returns>
+        </member>
+        <member name="M:BuildSoft.Text.ParseExtension.TryParseBool(System.String,System.Boolean@)">
+            <summary>
+            Parses a string to a boolean.
+            </summary>
+            <param name="text">text to parse</param>
+            <param name="result">output boolean</param>
+            <returns>true if the parsing succeeds</returns>
+        </member>
+        <member name="M:BuildSoft.Text.ParseExtension.TryParseGuid(System.String,System.Guid@)">
+            <summary>
+            Parses a string to a Guid.
+            </summary>
+            <param name="text">text to parse</param>
+            <param name="result">output guid</param>
+            <returns>true if the parsing succeeds</returns>
+        </member>
+        <member name="M:BuildSoft.Text.ParseExtension.TryParseEnum``1(System.String,``0@,System.Boolean)">
+            <summary>
+            Parses a string to an enumeration.
+            </summary>
+            <typeparam name="TEnum">enumeration type</typeparam>
+            <param name="text">text to parse</param>
+            <param name="result">output enum</param>
+            <param name="ignoreCase">flag to ignore the case when parsing</param>
+            <returns></returns>
+        </member>
+        <member name="T:BuildSoft.Text.StringExtension">
+            <summary>
+            Contains basic extension methods for strings.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Text.StringExtension.Repeat(System.String,System.Int32)">
+            <summary>
+            Repeats the given string a number of times.
+            </summary>
+            <param name="text">text to repeat</param>
+            <param name="times">times to repeat</param>
+            <returns>the repeated string</returns>
+            <exception cref="T:System.ArgumentNullException">text can't be null</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">times can't be negative</exception>
+        </member>
+        <member name="M:BuildSoft.Text.StringExtension.SubstringFromEnd(System.String,System.Int32)">
+            <summary>
+            Retrieves a substring from this instance where the index is counted from the end of the string.
+            </summary>
+            <param name="text">text to retrieve a substring from</param>
+            <param name="index">index from the end (0 means entire string)</param>
+            <returns>substring</returns>
+            <exception cref="T:System.ArgumentNullException">string shouldn't be null</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">index cannot be negative</exception>
+            <exception cref="T:BuildSoft.Validation.VariableException">calculated length was negative</exception>
+        </member>
+        <member name="M:BuildSoft.Text.StringExtension.SubstringFromEnd(System.String,System.Int32,System.Int32)">
+            <summary>
+            Retrieves a substring of a given length from this instance where the index is counted from the end of the string.
+            </summary>
+            <param name="text">text to retrieve a substring from</param>
+            <param name="index">index from the end (0 means entire string)</param>
+            <param name="length">length of the substring</param>
+            <returns>substring</returns>
+            <exception cref="T:System.ArgumentNullException">string shouldn't be null</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">index and or length cause invalid string position</exception>
+            <exception cref="T:BuildSoft.Validation.VariableException">length causes out of bound substring</exception>
+        </member>
+        <member name="M:BuildSoft.Text.StringExtension.RemoveFromBegin(System.String,System.String[])">
+            <summary>
+            Retrieves a substring that does not begin with the given target strings.
+            Null target string is ignored.
+            </summary>
+            <param name="text">text to retrieve a substring from</param>
+            <param name="targetStrings">target texts at the begining that have to be removed</param>
+            <returns>a substring that does not begin with the target strings</returns>
+            <exception cref="T:System.ArgumentNullException">in case the given text is null</exception>
+        </member>
+        <member name="M:BuildSoft.Text.StringExtension.RemoveFromEnd(System.String,System.String[])">
+            <summary>
+            Retrieves a substring that does not end with the given target strings.
+            Null target string is ignored.
+            </summary>
+            <param name="text">text to retrieve a substring from</param>
+            <param name="targetStrings">target texts at the end that have to be removed</param>
+            <returns>a substring that does not end with the target strings</returns>
+            <exception cref="T:System.ArgumentNullException">in case the given text is null</exception>
+        </member>
+        <member name="M:BuildSoft.Text.StringExtension.FirstToUpperInvariant(System.String)">
+            <summary>
+            Makes the first character in the text upper case
+            </summary>
+            <param name="text">text to change</param>
+            <returns>text with first character upper case</returns>
+        </member>
+        <member name="M:BuildSoft.Text.StringExtension.FirstToLowerInvariant(System.String)">
+            <summary>
+            Makes the first character in the text lower case
+            </summary>
+            <param name="text">text to change</param>
+            <returns>text with first character lower case</returns>
+        </member>
+        <member name="T:BuildSoft.Validation.EnumOutOfRangeException`1">
+            <summary>
+            Exception for out of range enumerations.
+            </summary>
+            <typeparam name="T">enumeration type</typeparam>
+        </member>
+        <member name="M:BuildSoft.Validation.EnumOutOfRangeException`1.#ctor(System.String)">
+            <summary>
+            Creates a new instance.
+            </summary>
+            <param name="outOfRangeVariable"></param>
+        </member>
+        <member name="T:BuildSoft.Validation.Guard">
+            <summary>
+            Contains several functions to simplify guard clauses in methods.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Validation.Guard.ArgumentNotNull``1(``0,System.String,System.String)">
+            <summary>
+            Checks if the provided argument is not null.
+            </summary>
+            <param name="argument">argument to check</param>
+            <param name="name">name of the argument</param>
+            <param name="customMessage">optional customized message</param>
+            <returns>the input argument</returns>
+            <exception cref="T:System.ArgumentNullException">when argument is null</exception>
+        </member>
+        <member name="M:BuildSoft.Validation.Guard.ArgumentInRange``1(``0,System.String,System.Func{``0,System.Boolean},System.String)">
+            <summary>
+            Checks if the provided argument is in the valid range.
+            </summary>
+            <typeparam name="T">argument type</typeparam>
+            <param name="argument">the argument to check</param>
+            <param name="name">name of the argument</param>
+            <param name="inRangeCheck">delegate to check the argument</param>
+            <param name="customMessage">optional customized message</param>
+            <returns>the argument if in range</returns>
+        </member>
+        <member name="M:BuildSoft.Validation.Guard.ArgumentPositive(System.Int32,System.String)">
+            <summary>
+            Checks if the provided argument is positive.
+            </summary>
+            <param name="argument">the argument to check</param>
+            <param name="name">name of the argument</param>
+        </member>
+        <member name="M:BuildSoft.Validation.Guard.Argument``1(``0,System.String,System.Func{``0,System.Boolean},System.String)">
+            <summary>
+            Checks if the argument satisfies the check.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="argument"></param>
+            <param name="name"></param>
+            <param name="check"></param>
+            <param name="customMessage">optional customized message</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Validation.Guard.Variable``1(``0,System.String,System.Func{``0,System.Boolean},System.String)">
+            <summary>
+            Checks if a given variable satisfies the provided check.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="variable"></param>
+            <param name="name"></param>
+            <param name="check"></param>
+            <param name="customMessage">optional customized message</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Validation.Guard.ValidOperation(System.Func{System.Boolean},System.String)">
+            <summary>
+            Throws an InvalidOperationException if the check fails.
+            </summary>
+            <param name="check"></param>
+            <param name="customMessage">optional customized message</param>
+        </member>
+        <member name="M:BuildSoft.Validation.Guard.ValidEnumType``1">
+            <summary>
+            Throws a GenericTypeArgumentException if the type is not a valid enum.
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+        </member>
+        <member name="T:BuildSoft.Validation.VariableException">
+            <summary>
+            Exception for variables.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Validation.VariableException.#ctor(System.String)">
+            <summary>
+            Initializes a new variable exception.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:BuildSoft.Xml.AttributeExtension">
+            <summary>
+            Extension methods for XAttribute
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.ToXAttribute``1(System.String,``0,System.Func{``0,System.String})">
+            <summary>
+            Convert a string to an XElement.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <param name="valueToContent"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.ToXAttribute(System.String,System.Int32)">
+            <summary>
+            Convert a string to an XAttribute.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns>new element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.ToXAttribute(System.String,System.Int64)">
+            <summary>
+            Convert a string to an XAttribute.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns>new element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.ToXAttribute(System.String,System.Double)">
+            <summary>
+            Convert a string to an XAttribute.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns>new element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.ToXAttribute(System.String,System.Double,System.Int32)">
+            <summary>
+            Convert a string to an XAttribute.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <param name="decimals"></param>
+            <returns>new element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.ToXAttribute(System.String,System.String)">
+            <summary>
+            Convert a string to an XAttribute.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns>new element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.ToXAttribute(System.String,System.Boolean)">
+            <summary>
+            Convert a string to an XAttribute.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns>new element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.ToXAttribute(System.String,System.Guid)">
+            <summary>
+            Convert a string to an XAttribute.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns>new element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.ToXAttribute(System.String,System.DateTime)">
+            <summary>
+            Convert a date time to an XAttribute.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns>new element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.ToXAttribute(System.String,System.TimeSpan)">
+            <summary>
+            Convert a timespan to an XAttribute.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns>new element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.ToXAttribute``1(System.String,``0)">
+            <summary>
+            Convert a string to an XAttribute.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns>new element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.GetInt(System.Xml.Linq.XAttribute)">
+            <summary>
+            Get integer
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.GetLong(System.Xml.Linq.XAttribute)">
+            <summary>
+            Get long
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.GetDouble(System.Xml.Linq.XAttribute)">
+            <summary>
+            Get double
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.GetString(System.Xml.Linq.XAttribute)">
+            <summary>
+            Get string
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.GetBool(System.Xml.Linq.XAttribute)">
+            <summary>
+            Get boolean
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.GetGuid(System.Xml.Linq.XAttribute)">
+            <summary>
+            Get guid
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.GetDateTime(System.Xml.Linq.XAttribute)">
+            <summary>
+            Get DateTime
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.GetTimeSpan(System.Xml.Linq.XAttribute)">
+            <summary>
+            Get TimeSpan
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.GetEnum``1(System.Xml.Linq.XAttribute)">
+            <summary>
+            Get enum
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.GetIntOrDefault(System.Xml.Linq.XAttribute,System.Int32)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.GetLongOrDefault(System.Xml.Linq.XAttribute,System.Int64)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.GetDoubleOrDefault(System.Xml.Linq.XAttribute,System.Double)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.GetStringOrDefault(System.Xml.Linq.XAttribute,System.String)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.GetBoolOrDefault(System.Xml.Linq.XAttribute,System.Boolean)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.GetGuidOrDefault(System.Xml.Linq.XAttribute,System.Guid)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.GetDateTimeOrDefault(System.Xml.Linq.XAttribute,System.DateTime)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.GetTimeSpanOrDefault(System.Xml.Linq.XAttribute,System.TimeSpan)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.GetEnumOrDefault``1(System.Xml.Linq.XAttribute,``0)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.TryGetInt(System.Xml.Linq.XAttribute,System.Int32@)">
+            <summary>
+            Try to get the value from the attribute
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.TryGetLong(System.Xml.Linq.XAttribute,System.Int64@)">
+            <summary>
+            Try to get the value from the attribute
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.TryGetDouble(System.Xml.Linq.XAttribute,System.Double@)">
+            <summary>
+            Try to get the value from the attribute
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.TryGetString(System.Xml.Linq.XAttribute,System.String@)">
+            <summary>
+            Try to get the value from the attribute
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.TryGetBool(System.Xml.Linq.XAttribute,System.Boolean@)">
+            <summary>
+            Try to get the value from the attribute
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.TryGetGuid(System.Xml.Linq.XAttribute,System.Guid@)">
+            <summary>
+            Try to get the value from the attribute
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.TryGetDateTime(System.Xml.Linq.XAttribute,System.DateTime@)">
+            <summary>
+            Try to get the value from the attribute
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.TryGetTimeSpan(System.Xml.Linq.XAttribute,System.TimeSpan@)">
+            <summary>
+            Try to get the value from the attribute
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.TryGetEnum``1(System.Xml.Linq.XAttribute,``0@)">
+            <summary>
+            Try to get the value from the attribute
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.AddAttribute``1(System.Xml.Linq.XElement,System.String,``0,System.Func{``0,System.String})">
+            <summary>
+            Add attribute.
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+            <param name="converter"></param>
+            <typeparam name="TValue"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.AddAttribute(System.Xml.Linq.XElement,System.String,System.Int32)">
+            <summary>
+            Add attribute.
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.AddAttribute(System.Xml.Linq.XElement,System.String,System.Int64)">
+            <summary>
+            Add attribute.
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.AddAttribute(System.Xml.Linq.XElement,System.String,System.Double)">
+            <summary>
+            Add attribute.
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.AddAttribute(System.Xml.Linq.XElement,System.String,System.Double,System.Int32)">
+            <summary>
+            Add attribute.
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+            <param name="decimals"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.AddAttribute(System.Xml.Linq.XElement,System.String,System.String)">
+            <summary>
+            Add attribute.
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.AddAttribute(System.Xml.Linq.XElement,System.String,System.Boolean)">
+            <summary>
+            Add attribute.
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.AddAttribute(System.Xml.Linq.XElement,System.String,System.Guid)">
+            <summary>
+            Add attribute.
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.AddAttribute(System.Xml.Linq.XElement,System.String,System.DateTime)">
+            <summary>
+            Add attribute.
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.AddAttribute(System.Xml.Linq.XElement,System.String,System.TimeSpan)">
+            <summary>
+            Add attribute.
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.AddAttribute``1(System.Xml.Linq.XElement,System.String,``0)">
+            <summary>
+            Add attribute.
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.UpdateAttribute``1(System.Xml.Linq.XElement,System.String,``0,System.Func{``0,System.String})">
+            <summary>
+            Update the value of an attribute
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+            <param name="converter"></param>
+            <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.UpdateAttribute(System.Xml.Linq.XElement,System.String,System.Int32)">
+            <summary>
+            Update the value of an attribute
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.UpdateAttribute(System.Xml.Linq.XElement,System.String,System.Int64)">
+            <summary>
+            Update the value of an attribute
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.UpdateAttribute(System.Xml.Linq.XElement,System.String,System.Double)">
+            <summary>
+            Update the value of an attribute
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.UpdateAttribute(System.Xml.Linq.XElement,System.String,System.Double,System.Int32)">
+            <summary>
+            Update the value of an attribute
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+            <param name="decimals"></param>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.UpdateAttribute(System.Xml.Linq.XElement,System.String,System.String)">
+            <summary>
+            Update the value of an attribute
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.UpdateAttribute(System.Xml.Linq.XElement,System.String,System.Boolean)">
+            <summary>
+            Update the value of an attribute
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.UpdateAttribute(System.Xml.Linq.XElement,System.String,System.Guid)">
+            <summary>
+            Update the value of an attribute
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.UpdateAttribute(System.Xml.Linq.XElement,System.String,System.DateTime)">
+            <summary>
+            Update the value of an attribute
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.UpdateAttribute(System.Xml.Linq.XElement,System.String,System.TimeSpan)">
+            <summary>
+            Update the value of an attribute
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:BuildSoft.Xml.AttributeExtension.UpdateAttribute``1(System.Xml.Linq.XElement,System.String,``0)">
+            <summary>
+            Update the value of an attribute
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+        </member>
+        <member name="T:BuildSoft.Xml.ChildElementExtension">
+            <summary>
+            Extension methods to create/manipulate child elements
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.AddChild(System.Xml.Linq.XElement,System.Xml.Linq.XElement)">
+            <summary>
+            Add a child element an return the child.
+            </summary>
+            <param name="parent"></param>
+            <param name="child"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.AddChild(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            Add a child element and return the created child.
+            </summary>
+            <param name="parent">parent element</param>
+            <param name="name">element name</param>
+            <returns>the child element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.AddChild(System.Xml.Linq.XElement,System.String,System.Int32)">
+            <summary>
+            Add a child element and return the created child.
+            </summary>
+            <param name="parent">parent element</param>
+            <param name="name">element name</param>
+            <param name="value">value</param>
+            <returns>the child element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.AddChild(System.Xml.Linq.XElement,System.String,System.Int64)">
+            <summary>
+            Add a child element and return the created child.
+            </summary>
+            <param name="parent">parent element</param>
+            <param name="name">element name</param>
+            <param name="value">value</param>
+            <returns>the child element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.AddChild(System.Xml.Linq.XElement,System.String,System.Double)">
+            <summary>
+            Add a child element and return the created child.
+            </summary>
+            <param name="parent">parent element</param>
+            <param name="name">element name</param>
+            <param name="value">value</param>
+            <returns>the child element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.AddChild(System.Xml.Linq.XElement,System.String,System.Double,System.Int32)">
+            <summary>
+            Add a child element and return the created child.
+            </summary>
+            <param name="parent">parent element</param>
+            <param name="name">element name</param>
+            <param name="value">value</param>
+            <param name="decimals"></param>
+            <returns>the child element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.AddChild(System.Xml.Linq.XElement,System.String,System.String)">
+            <summary>
+            Add a child element and return the created child.
+            </summary>
+            <param name="parent">parent element</param>
+            <param name="name">element name</param>
+            <param name="value">value</param>
+            <returns>the child element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.AddChild(System.Xml.Linq.XElement,System.String,System.Boolean)">
+            <summary>
+            Add a child element and return the created child.
+            </summary>
+            <param name="parent">parent element</param>
+            <param name="name">element name</param>
+            <param name="value">value</param>
+            <returns>the child element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.AddChild(System.Xml.Linq.XElement,System.String,System.Guid)">
+            <summary>
+            Add a child element and return the created child.
+            </summary>
+            <param name="parent">parent element</param>
+            <param name="name">element name</param>
+            <param name="id">value</param>
+            <returns>the child element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.AddChild(System.Xml.Linq.XElement,System.String,System.DateTime)">
+            <summary>
+            Add a child element and return the created child.
+            </summary>
+            <param name="parent">parent element</param>
+            <param name="name">element name</param>
+            <param name="value">value</param>
+            <returns>the child element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.AddChild(System.Xml.Linq.XElement,System.String,System.TimeSpan)">
+            <summary>
+            Add a child element and return the created child.
+            </summary>
+            <param name="parent">parent element</param>
+            <param name="name">element name</param>
+            <param name="value">value</param>
+            <returns>the child element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.AddChild``1(System.Xml.Linq.XElement,System.String,``0)">
+            <summary>
+            Add a child element and return the created child.
+            </summary>
+            <param name="parent">parent element</param>
+            <param name="name">element name</param>
+            <param name="value">value</param>
+            <returns>the child element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.AddChildren(System.Xml.Linq.XElement,System.String,System.Int32[])">
+            <summary>
+            Add child elements and return the created children.
+            </summary>
+            <param name="parent">parent element</param>
+            <param name="name">element name</param>
+            <param name="values">values</param>
+            <returns>the created children</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.AddChildren(System.Xml.Linq.XElement,System.String,System.Int64[])">
+            <summary>
+            Add child elements and return the created children.
+            </summary>
+            <param name="parent">parent element</param>
+            <param name="name">element name</param>
+            <param name="values">values</param>
+            <returns>the created children</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.AddChildren(System.Xml.Linq.XElement,System.String,System.Double[])">
+            <summary>
+            Add child elements and return the created children.
+            </summary>
+            <param name="parent">parent element</param>
+            <param name="name">element name</param>
+            <param name="values">values</param>
+            <returns>the created children</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.AddChildren(System.Xml.Linq.XElement,System.String,System.Double[],System.Int32)">
+            <summary>
+            Add child elements and return the created children.
+            </summary>
+            <param name="parent">parent element</param>
+            <param name="name">element name</param>
+            <param name="values">values</param>
+            <param name="decimals"></param>
+            <returns>the created children</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.AddChildren(System.Xml.Linq.XElement,System.String,System.String[])">
+            <summary>
+            Add child elements and return the created children.
+            </summary>
+            <param name="parent">parent element</param>
+            <param name="name">element name</param>
+            <param name="values">values</param>
+            <returns>the created children</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.AddChildren(System.Xml.Linq.XElement,System.String,System.Boolean[])">
+            <summary>
+            Add child elements and return the created children.
+            </summary>
+            <param name="parent">parent element</param>
+            <param name="name">element name</param>
+            <param name="values">values</param>
+            <returns>the created children</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.AddChildren(System.Xml.Linq.XElement,System.String,System.Guid[])">
+            <summary>
+            Add child elements and return the created children.
+            </summary>
+            <param name="parent">parent element</param>
+            <param name="name">element name</param>
+            <param name="ids">values</param>
+            <returns>the created children</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.AddChildren(System.Xml.Linq.XElement,System.String,System.DateTime[])">
+            <summary>
+            Add child elements and return the created children.
+            </summary>
+            <param name="parent">parent element</param>
+            <param name="name">element name</param>
+            <param name="values">values</param>
+            <returns>the created children</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.AddChildren(System.Xml.Linq.XElement,System.String,System.TimeSpan[])">
+            <summary>
+            Add child elements and return the created children.
+            </summary>
+            <param name="parent">parent element</param>
+            <param name="name">element name</param>
+            <param name="values">values</param>
+            <returns>the created children</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.AddChildren``1(System.Xml.Linq.XElement,System.String,``0[])">
+            <summary>
+            Add child elements and return the created children.
+            </summary>
+            <param name="parent">parent element</param>
+            <param name="name">element name</param>
+            <param name="values">values</param>
+            <returns>the created children</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetIntFromChild(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            Get integer
+            </summary>
+            <param name="element"></param>
+            <param name="childName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetLongFromChild(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            Get long
+            </summary>
+            <param name="element"></param>
+            <param name="childName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetDoubleFromChild(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            Get double
+            </summary>
+            <param name="element"></param>
+            <param name="childName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetStringFromChild(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            Get string
+            </summary>
+            <param name="element"></param>
+            <param name="childName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetBoolFromChild(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            Get boolean
+            </summary>
+            <param name="element"></param>
+            <param name="childName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetGuidFromChild(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            Get guid
+            </summary>
+            <param name="element"></param>
+            <param name="childName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetDateTimeFromChild(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            Get DateTime
+            </summary>
+            <param name="element"></param>
+            <param name="childName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetTimeSpanFromChild(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            Get TimeSpan
+            </summary>
+            <param name="element"></param>
+            <param name="childName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetEnumFromChild``1(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            Get enum
+            </summary>
+            <param name="element"></param>
+            <param name="childName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetIntOrDefaultFromChild(System.Xml.Linq.XElement,System.String,System.Int32)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="childName"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetLongOrDefaultFromChild(System.Xml.Linq.XElement,System.String,System.Int64)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="childName"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetDoubleOrDefaultFromChild(System.Xml.Linq.XElement,System.String,System.Double)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="childName"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetStringOrDefaultFromChild(System.Xml.Linq.XElement,System.String,System.String)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="childName"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetBoolOrDefaultFromChild(System.Xml.Linq.XElement,System.String,System.Boolean)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="childName"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetGuidOrDefaultFromChild(System.Xml.Linq.XElement,System.String,System.Guid)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="childName"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetDateTimeOrDefaultFromChild(System.Xml.Linq.XElement,System.String,System.DateTime)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="childName"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetTimeSpanOrDefaultFromChild(System.Xml.Linq.XElement,System.String,System.TimeSpan)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="childName"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetEnumOrDefaultFromChild``1(System.Xml.Linq.XElement,System.String,``0)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="childName"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.TryGetIntFromChild(System.Xml.Linq.XElement,System.String,System.Int32@)">
+            <summary>
+            Try to get the value from the element
+            </summary>
+            <param name="element"></param>
+            <param name="childName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.TryGetLongFromChild(System.Xml.Linq.XElement,System.String,System.Int64@)">
+            <summary>
+            Try to get the value from the element
+            </summary>
+            <param name="element"></param>
+            <param name="childName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.TryGetDoubleFromChild(System.Xml.Linq.XElement,System.String,System.Double@)">
+            <summary>
+            Try to get the value from the element
+            </summary>
+            <param name="element"></param>
+            <param name="childName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.TryGetStringFromChild(System.Xml.Linq.XElement,System.String,System.String@)">
+            <summary>
+            Try to get the value from the element
+            </summary>
+            <param name="element"></param>
+            <param name="childName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.TryGetBoolFromChild(System.Xml.Linq.XElement,System.String,System.Boolean@)">
+            <summary>
+            Try to get the value from the element
+            </summary>
+            <param name="element"></param>
+            <param name="childName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.TryGetGuidFromChild(System.Xml.Linq.XElement,System.String,System.Guid@)">
+            <summary>
+            Try to get the value from the element
+            </summary>
+            <param name="element"></param>
+            <param name="childName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.TryGetDateTimeFromChild(System.Xml.Linq.XElement,System.String,System.DateTime@)">
+            <summary>
+            Try to get the value from the element
+            </summary>
+            <param name="element"></param>
+            <param name="childName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.TryGetTimeSpanFromChild(System.Xml.Linq.XElement,System.String,System.TimeSpan@)">
+            <summary>
+            Try to get the value from the element
+            </summary>
+            <param name="element"></param>
+            <param name="childName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.TryGetEnumFromChild``1(System.Xml.Linq.XElement,System.String,``0@,System.Boolean)">
+            <summary>
+            Try to get the value from the element
+            </summary>
+            <param name="element"></param>
+            <param name="childName"></param>
+            <param name="value"></param>
+            <param name="validateIsDefined"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetIntFromAttribute(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            Get integer
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetLongFromAttribute(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            Get long
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetDoubleFromAttribute(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            Get double
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetStringFromAttribute(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            Get string
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetBoolFromAttribute(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            Get boolean
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetGuidFromAttribute(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            Get guid
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetDateTimeFromAttribute(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            Get DateTime
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetTimeSpanFromAttribute(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            Get TimeSpan
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetEnumFromAttribute``1(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            Get enum
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetIntOrDefaultFromAttribute(System.Xml.Linq.XElement,System.String,System.Int32)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetLongOrDefaultFromAttribute(System.Xml.Linq.XElement,System.String,System.Int64)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetDoubleOrDefaultFromAttribute(System.Xml.Linq.XElement,System.String,System.Double)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetStringOrDefaultFromAttribute(System.Xml.Linq.XElement,System.String,System.String)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetBoolOrDefaultFromAttribute(System.Xml.Linq.XElement,System.String,System.Boolean)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetGuidOrDefaultFromAttribute(System.Xml.Linq.XElement,System.String,System.Guid)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetDateTimeOrDefaultFromAttribute(System.Xml.Linq.XElement,System.String,System.DateTime)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetTimeSpanOrDefaultFromAttribute(System.Xml.Linq.XElement,System.String,System.TimeSpan)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.GetEnumOrDefaultFromAttribute``1(System.Xml.Linq.XElement,System.String,``0)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.TryGetIntFromAttribute(System.Xml.Linq.XElement,System.String,System.Int32@)">
+            <summary>
+            Try to get the value from the element
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.TryGetLongFromAttribute(System.Xml.Linq.XElement,System.String,System.Int64@)">
+            <summary>
+            Try to get the value from the element
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.TryGetDoubleFromAttribute(System.Xml.Linq.XElement,System.String,System.Double@)">
+            <summary>
+            Try to get the value from the element
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.TryGetStringFromAttribute(System.Xml.Linq.XElement,System.String,System.String@)">
+            <summary>
+            Try to get the value from the element
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.TryGetBoolFromAttribute(System.Xml.Linq.XElement,System.String,System.Boolean@)">
+            <summary>
+            Try to get the value from the element
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.TryGetGuidFromAttribute(System.Xml.Linq.XElement,System.String,System.Guid@)">
+            <summary>
+            Try to get the value from the element
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.TryGetDateTimeFromAttribute(System.Xml.Linq.XElement,System.String,System.DateTime@)">
+            <summary>
+            Try to get the value from the element
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.TryGetTimeSpanFromAttribute(System.Xml.Linq.XElement,System.String,System.TimeSpan@)">
+            <summary>
+            Try to get the value from the element
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ChildElementExtension.TryGetEnumFromAttribute``1(System.Xml.Linq.XElement,System.String,``0@,System.Boolean)">
+            <summary>
+            Try to get the value from the element
+            </summary>
+            <param name="element"></param>
+            <param name="attributeName"></param>
+            <param name="value"></param>
+            <param name="validateIsDefined"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BuildSoft.Xml.ElementExtension">
+            <summary>
+            Extension methods for <see cref="T:System.Xml.Linq.XElement"/>.
+            </summary>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.ToXElement(System.String)">
+            <summary>
+            Convert a string to an XElement.
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.ToXElement(System.String,System.Xml.Linq.XElement[])">
+            <summary>
+            Convert a string an an XElement adding children in the process.
+            </summary>
+            <param name="name"></param>
+            <param name="children"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.ToXElement(System.String,System.Xml.Linq.XAttribute[])">
+            <summary>
+            Convert a string an an XElement adding attributes in the process.
+            </summary>
+            <param name="name"></param>
+            <param name="attributes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.ToXElement``1(System.String,``0,System.Func{``0,System.String})">
+            <summary>
+            Convert a string to an XElement.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <param name="valueToContent"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.ToXElement(System.String,System.Int32)">
+            <summary>
+            Convert a string to an XElement.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns>new element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.ToXElement(System.String,System.Int64)">
+            <summary>
+            Convert a string to an XElement.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns>new element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.ToXElement(System.String,System.Double)">
+            <summary>
+            Convert a string to an XElement.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns>new element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.ToXElement(System.String,System.Double,System.Int32)">
+            <summary>
+            Convert a string to an XElement.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <param name="decimals"></param>
+            <returns>new element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.ToXElement(System.String,System.String)">
+            <summary>
+            Convert a string to an XElement.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns>new element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.ToXElement(System.String,System.Boolean)">
+            <summary>
+            Convert a string to an XElement.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns>new element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.ToXElement(System.String,System.Guid)">
+            <summary>
+            Convert a string to an XElement.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns>new element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.ToXElement(System.String,System.DateTime)">
+            <summary>
+            Convert a string to an XElement.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns>new element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.ToXElement(System.String,System.TimeSpan)">
+            <summary>
+            Convert a timespan to an XElement.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns>new element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.ToXElement``1(System.String,``0)">
+            <summary>
+            Convert a string to an XElement.
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns>new element</returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.AddSiblingBefore(System.Xml.Linq.XElement,System.Xml.Linq.XElement)">
+            <summary>
+            Add a sibling before self.
+            </summary>
+            <param name="self"></param>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.AddSiblingBefore(System.Xml.Linq.XElement,System.String,System.Int32)">
+            <summary>
+            Add a sibling before self.
+            </summary>
+            <param name="self"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.AddSiblingBefore(System.Xml.Linq.XElement,System.String,System.Int64)">
+            <summary>
+            Add a sibling before self.
+            </summary>
+            <param name="self"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.AddSiblingBefore(System.Xml.Linq.XElement,System.String,System.Double)">
+            <summary>
+            Add a sibling before self.
+            </summary>
+            <param name="self"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.AddSiblingBefore(System.Xml.Linq.XElement,System.String,System.Double,System.Int32)">
+            <summary>
+            Add a sibling before self.
+            </summary>
+            <param name="self"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+            <param name="decimals"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.AddSiblingBefore(System.Xml.Linq.XElement,System.String,System.String)">
+            <summary>
+            Add a sibling before self.
+            </summary>
+            <param name="self"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.AddSiblingBefore(System.Xml.Linq.XElement,System.String,System.Boolean)">
+            <summary>
+            Add a sibling before self.
+            </summary>
+            <param name="self"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.AddSiblingBefore(System.Xml.Linq.XElement,System.String,System.Guid)">
+            <summary>
+            Add a sibling before self.
+            </summary>
+            <param name="self"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.AddSiblingBefore(System.Xml.Linq.XElement,System.String,System.DateTime)">
+            <summary>
+            Add a sibling before self.
+            </summary>
+            <param name="self"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.AddSiblingBefore(System.Xml.Linq.XElement,System.String,System.TimeSpan)">
+            <summary>
+            Add a sibling before self.
+            </summary>
+            <param name="self"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.AddSiblingBefore``1(System.Xml.Linq.XElement,System.String,``0)">
+            <summary>
+            Add a sibling before self.
+            </summary>
+            <param name="self"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.AddSiblingAfter(System.Xml.Linq.XElement,System.Xml.Linq.XElement)">
+            <summary>
+            Add a sibling after self.
+            </summary>
+            <param name="self"></param>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.AddSiblingAfter(System.Xml.Linq.XElement,System.String,System.Int32)">
+            <summary>
+            Add a sibling after self.
+            </summary>
+            <param name="self"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.AddSiblingAfter(System.Xml.Linq.XElement,System.String,System.Int64)">
+            <summary>
+            Add a sibling after self.
+            </summary>
+            <param name="self"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.AddSiblingAfter(System.Xml.Linq.XElement,System.String,System.Double)">
+            <summary>
+            Add a sibling after self.
+            </summary>
+            <param name="self"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.AddSiblingAfter(System.Xml.Linq.XElement,System.String,System.Double,System.Int32)">
+            <summary>
+            Add a sibling after self.
+            </summary>
+            <param name="self"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+            <param name="decimals"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.AddSiblingAfter(System.Xml.Linq.XElement,System.String,System.String)">
+            <summary>
+            Add a sibling after self.
+            </summary>
+            <param name="self"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.AddSiblingAfter(System.Xml.Linq.XElement,System.String,System.Boolean)">
+            <summary>
+            Add a sibling after self.
+            </summary>
+            <param name="self"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.AddSiblingAfter(System.Xml.Linq.XElement,System.String,System.Guid)">
+            <summary>
+            Add a sibling after self.
+            </summary>
+            <param name="self"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.AddSiblingAfter(System.Xml.Linq.XElement,System.String,System.DateTime)">
+            <summary>
+            Add a sibling after self.
+            </summary>
+            <param name="self"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.AddSiblingAfter(System.Xml.Linq.XElement,System.String,System.TimeSpan)">
+            <summary>
+            Add a sibling after self.
+            </summary>
+            <param name="self"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.AddSiblingAfter``1(System.Xml.Linq.XElement,System.String,``0)">
+            <summary>
+            Add a sibling after self.
+            </summary>
+            <param name="self"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.Update``1(System.Xml.Linq.XElement,``0,System.Func{``0,System.String})">
+            <summary>
+            Update the value
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+            <param name="valueToContent"></param>
+            <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.Update(System.Xml.Linq.XElement,System.Int32)">
+            <summary>
+            Update the value
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.Update(System.Xml.Linq.XElement,System.Int64)">
+            <summary>
+            Update the value
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.Update(System.Xml.Linq.XElement,System.Double)">
+            <summary>
+            Update the value
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.Update(System.Xml.Linq.XElement,System.Double,System.Int32)">
+            <summary>
+            Update the value
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+            <param name="decimals"></param>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.Update(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            Update the value
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.Update(System.Xml.Linq.XElement,System.Boolean)">
+            <summary>
+            Update the value
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.Update(System.Xml.Linq.XElement,System.Guid)">
+            <summary>
+            Update the value
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.Update(System.Xml.Linq.XElement,System.DateTime)">
+            <summary>
+            Update the value
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.Update(System.Xml.Linq.XElement,System.TimeSpan)">
+            <summary>
+            Update the value
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.Update``1(System.Xml.Linq.XElement,``0)">
+            <summary>
+            Update the value
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.GetInt(System.Xml.Linq.XElement)">
+            <summary>
+            Get integer
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.GetLong(System.Xml.Linq.XElement)">
+            <summary>
+            Get long
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.GetDouble(System.Xml.Linq.XElement)">
+            <summary>
+            Get double
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.GetString(System.Xml.Linq.XElement)">
+            <summary>
+            Get string
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.GetBool(System.Xml.Linq.XElement)">
+            <summary>
+            Get boolean
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.GetGuid(System.Xml.Linq.XElement)">
+            <summary>
+            Get guid
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.GetDateTime(System.Xml.Linq.XElement)">
+            <summary>
+            Get DateTime
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.GetTimeSpan(System.Xml.Linq.XElement)">
+            <summary>
+            Get DateTime
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.GetEnum``1(System.Xml.Linq.XElement)">
+            <summary>
+            Get enum
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.GetIntOrDefault(System.Xml.Linq.XElement,System.Int32)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.GetLongOrDefault(System.Xml.Linq.XElement,System.Int64)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.GetDoubleOrDefault(System.Xml.Linq.XElement,System.Double)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.GetStringOrDefault(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.GetBoolOrDefault(System.Xml.Linq.XElement,System.Boolean)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.GetGuidOrDefault(System.Xml.Linq.XElement,System.Guid)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.GetDateTimeOrDefault(System.Xml.Linq.XElement,System.DateTime)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.GetTimeSpanOrDefault(System.Xml.Linq.XElement,System.TimeSpan)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.GetEnumOrDefault``1(System.Xml.Linq.XElement,``0)">
+            <summary>
+            Get value
+            </summary>
+            <param name="element"></param>
+            <param name="default"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.TryGetInt(System.Xml.Linq.XElement,System.Int32@)">
+            <summary>
+            Try to get the value from the element
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.TryGetLong(System.Xml.Linq.XElement,System.Int64@)">
+            <summary>
+            Try to get the value from the element
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.TryGetDouble(System.Xml.Linq.XElement,System.Double@)">
+            <summary>
+            Try to get the value from the element
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.TryGetString(System.Xml.Linq.XElement,System.String@)">
+            <summary>
+            Try to get the value from the element
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.TryGetBool(System.Xml.Linq.XElement,System.Boolean@)">
+            <summary>
+            Try to get the value from the element
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.TryGetGuid(System.Xml.Linq.XElement,System.Guid@)">
+            <summary>
+            Try to get the value from the element
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.TryGetDateTime(System.Xml.Linq.XElement,System.DateTime@)">
+            <summary>
+            Try to get the value from the element
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.TryGetTimeSpan(System.Xml.Linq.XElement,System.TimeSpan@)">
+            <summary>
+            Try to get the value from the element
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.TryGetEnum``1(System.Xml.Linq.XElement,``0@)">
+            <summary>
+            Try to get the value from the element
+            </summary>
+            <param name="element"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.GetIntOrNull(System.Xml.Linq.XElement)">
+            <summary>
+            Try get the value, when fails return null
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.GetLongOrNull(System.Xml.Linq.XElement)">
+            <summary>
+            Try get the value, when fails return null
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.GetDoubleOrNull(System.Xml.Linq.XElement)">
+            <summary>
+            Try get the value, when fails return null
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.GetBoolOrNull(System.Xml.Linq.XElement)">
+            <summary>
+            Try get the value, when fails return null
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.GetGuidOrNull(System.Xml.Linq.XElement)">
+            <summary>
+            Try get the value, when fails return null
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.GetDateTimeOrNull(System.Xml.Linq.XElement)">
+            <summary>
+            Try get the value, when fails return null
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.GetTimeSpanOrNull(System.Xml.Linq.XElement)">
+            <summary>
+            Try get the value, when fails return null
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.GetEnumOrNull``1(System.Xml.Linq.XElement)">
+            <summary>
+            Try get the value, when fails return null
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.OrEmpty(System.Xml.Linq.XElement)">
+            <summary>
+            Returns an empty enumerable when null is provided.
+            </summary>
+            <param name="element">xml element</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.HasElements(System.Xml.Linq.XElement)">
+            <summary>
+            Returns true when the element has at least one element.
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.IsNullOrEmpty(System.Xml.Linq.XElement)">
+            <summary>
+            Returns true when the element is null or has no elements
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.IsEmpty(System.Xml.Linq.XElement)">
+            <summary>
+            Returns true when an element has at least one element.
+            </summary>
+            <param name="element">not-null element</param>
+            <returns></returns>
+        </member>
+        <member name="M:BuildSoft.Xml.ElementExtension.FirstOrNull(System.Xml.Linq.XElement)">
+            <summary>
+            returns the first element if the list has elements.
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
