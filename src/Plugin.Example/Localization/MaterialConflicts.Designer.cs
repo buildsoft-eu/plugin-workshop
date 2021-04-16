@@ -22,14 +22,14 @@ namespace Plugin.Example.Localization {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class General {
+    internal class MaterialConflicts {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal General() {
+        internal MaterialConflicts() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Plugin.Example.Localization {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Plugin.Example.Localization.General", typeof(General).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Plugin.Example.Localization.MaterialConflicts", typeof(MaterialConflicts).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,20 +61,56 @@ namespace Plugin.Example.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Continue.
+        ///   Looks up a localized string similar to API Material.
         /// </summary>
-        internal static string Continue {
+        internal static string ApiMaterial {
             get {
-                return ResourceManager.GetString("Continue", resourceCulture);
+                return ResourceManager.GetString("ApiMaterial", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Example Plugin.
+        ///   Looks up a localized string similar to Mapping.
         /// </summary>
-        internal static string Name {
+        internal static string MissingMapping {
             get {
-                return ResourceManager.GetString("Name", resourceCulture);
+                return ResourceManager.GetString("MissingMapping", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        internal static string Resolved {
+            get {
+                return ResourceManager.GetString("Resolved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Conflict Type.
+        /// </summary>
+        internal static string Type {
+            get {
+                return ResourceManager.GetString("Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UBSM Material.
+        /// </summary>
+        internal static string UbsmMaterial {
+            get {
+                return ResourceManager.GetString("UbsmMaterial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unknown.
+        /// </summary>
+        internal static string Unknown {
+            get {
+                return ResourceManager.GetString("Unknown", resourceCulture);
             }
         }
     }

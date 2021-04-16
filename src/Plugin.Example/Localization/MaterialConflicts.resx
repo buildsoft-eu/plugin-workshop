@@ -117,10 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Continue" xml:space="preserve">
-    <value>Continue</value>
+  <data name="ApiMaterial" xml:space="preserve">
+    <value>API Material</value>
   </data>
-  <data name="Name" xml:space="preserve">
-    <value>Example Plugin</value>
+  <data name="MissingMapping" xml:space="preserve">
+    <value>Mapping</value>
+  </data>
+  <data name="Resolved" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Conflict Type</value>
+  </data>
+  <data name="UbsmMaterial" xml:space="preserve">
+    <value>UBSM Material</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Unknown</value>
   </data>
 </root>

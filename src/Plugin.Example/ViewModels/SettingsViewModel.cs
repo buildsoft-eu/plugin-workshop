@@ -14,7 +14,7 @@ namespace Plugin.Example.ViewModels
 
         #region Base class implementations
 
-        private Settings _settings = new Settings();
+        private Settings _settings = new();
 
         public override void Load()
         {

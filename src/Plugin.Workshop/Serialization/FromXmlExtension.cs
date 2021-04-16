@@ -432,8 +432,7 @@ namespace Plugin.Workshop.Serialization
             }
             if (measurementNode.Attributes().Any(x => string.Compare(x.Name.ToString(), "Quantity", StringComparison.InvariantCultureIgnoreCase) == 0))
             {
-                measurement.Quantity = (Quantity)Enum.Parse(typeof(Quantity), measurementNode.Attributes().
-                Where(x => string.Compare(x.Name.ToString(), "Quantity", StringComparison.InvariantCultureIgnoreCase) == 0).First().Value);
+                measurement.Quantity = (Quantity)Enum.Parse(typeof(Quantity), measurementNode.Attributes().First(x => string.Compare(x.Name.ToString(), "Quantity", StringComparison.InvariantCultureIgnoreCase) == 0).Value);
             }
 
             return measurement;
@@ -2274,7 +2273,7 @@ namespace Plugin.Workshop.Serialization
         /// <summary>
         /// Automatically generated converter method for <see cref="Matrix2x2" />.
         /// </summary>
-        public static Matrix2x2 ToMatrix2x2(this XElement matrix2X2Node)
+        public static Matrix2x2 ToMatrix2X2(this XElement matrix2X2Node)
         {
             var matrix2X2 = new Matrix2x2();
             if (matrix2X2Node.Elements().Any(x => string.Compare(x.Name.ToString(), "Cell11", StringComparison.InvariantCultureIgnoreCase) == 0))
@@ -2300,7 +2299,7 @@ namespace Plugin.Workshop.Serialization
         /// <summary>
         /// Automatically generated converter method for <see cref="Matrix3x3" />.
         /// </summary>
-        public static Matrix3x3 ToMatrix3x3(this XElement matrix3X3Node)
+        public static Matrix3x3 ToMatrix3X3(this XElement matrix3X3Node)
         {
             var matrix3X3 = new Matrix3x3();
             if (matrix3X3Node.Elements().Any(x => string.Compare(x.Name.ToString(), "Cell11", StringComparison.InvariantCultureIgnoreCase) == 0))
@@ -4900,13 +4899,11 @@ namespace Plugin.Workshop.Serialization
             var boundarycondition = new BoundaryCondition();
             if (boundaryconditionNode.Attributes().Any(x => string.Compare(x.Name.ToString(), "BoundaryConditionType", StringComparison.InvariantCultureIgnoreCase) == 0))
             {
-                boundarycondition.BoundaryConditionType = (BoundaryConditionType)Enum.Parse(typeof(BoundaryConditionType), boundaryconditionNode.Attributes().
-                Where(x => string.Compare(x.Name.ToString(), "BoundaryConditionType", StringComparison.InvariantCultureIgnoreCase) == 0).First().Value);
+                boundarycondition.BoundaryConditionType = (BoundaryConditionType)Enum.Parse(typeof(BoundaryConditionType), boundaryconditionNode.Attributes().First(x => string.Compare(x.Name.ToString(), "BoundaryConditionType", StringComparison.InvariantCultureIgnoreCase) == 0).Value);
             }
             if (boundaryconditionNode.Attributes().Any(x => string.Compare(x.Name.ToString(), "ReleaseMode", StringComparison.InvariantCultureIgnoreCase) == 0))
             {
-                boundarycondition.ReleaseMode = (ReleaseMode)Enum.Parse(typeof(ReleaseMode), boundaryconditionNode.Attributes().
-                Where(x => string.Compare(x.Name.ToString(), "ReleaseMode", StringComparison.InvariantCultureIgnoreCase) == 0).First().Value);
+                boundarycondition.ReleaseMode = (ReleaseMode)Enum.Parse(typeof(ReleaseMode), boundaryconditionNode.Attributes().First(x => string.Compare(x.Name.ToString(), "ReleaseMode", StringComparison.InvariantCultureIgnoreCase) == 0).Value);
             }
             if (boundaryconditionNode.Attributes().Any(x => string.Compare(x.Name.ToString(), "WithFunction", StringComparison.InvariantCultureIgnoreCase) == 0))
             {

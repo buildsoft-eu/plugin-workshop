@@ -136,6 +136,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Example.API\Example.API.csproj">
+      <Project>{92171bcd-5de3-4e20-8bec-cfce968876fc}</Project>
+      <Name>Example.API</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Plugin.Example\Plugin.Example.csproj">
       <Project>{ee19ec98-70b1-47e2-93e7-684bc78e5062}</Project>
       <Name>Plugin.Example</Name>

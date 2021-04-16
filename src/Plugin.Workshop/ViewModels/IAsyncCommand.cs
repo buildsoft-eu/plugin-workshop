@@ -4,7 +4,7 @@ using System.Windows.Input;
 
 namespace Plugin.Workshop.ViewModels
 {
-    public interface IAsyncCommand : System.Windows.Input.ICommand
+    public interface IAsyncCommand : ICommand
     {
         Task ExecuteAsync(object parameter);
         NotifyTaskCompletion<bool> Execution { get; }

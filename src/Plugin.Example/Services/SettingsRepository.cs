@@ -20,11 +20,9 @@ namespace Plugin.Example.Services
                 return new Settings();
             }
 
-            using (var reader = File.OpenText(_path))
-            {
-                var json = reader.ReadToEnd();
-                return JsonConvert.DeserializeObject<Settings>(json);
-            }
+            using var reader = File.OpenText(_path);
+            var json = reader.ReadToEnd();
+            return JsonConvert.DeserializeObject<Settings>(json);
         }
 
         public void Set(Settings newSettings)

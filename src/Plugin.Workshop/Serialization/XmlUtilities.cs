@@ -32,7 +32,7 @@ namespace Plugin.Workshop.Serialization
 
             if (input.GetType().ImplementsInterface(typeof(IConvertible)))
             {
-                return (T)System.Convert.ChangeType(
+                return (T)Convert.ChangeType(
                     input,
                     targetType,
                     CultureInfo.InvariantCulture);

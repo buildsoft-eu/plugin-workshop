@@ -8,12 +8,12 @@ namespace Plugin.Workshop
     /// </summary>
     public partial class MainWindow
     {
-        private readonly Example.Plugin _plugin;
+        private readonly Example.ApiPlugin _apiPlugin;
         private readonly MainWindowViewModel _vm;
 
         public MainWindow()
         {
-            _plugin = new Example.Plugin();
+            _apiPlugin = new Example.ApiPlugin();
             DataContext = _vm = new MainWindowViewModel();
             InitializeComponent();
         }
@@ -21,29 +21,29 @@ namespace Plugin.Workshop
         private void Window_Initialized(object sender, System.EventArgs e)
         {
             _vm.SetPluginDisplayInfo(
-                _plugin.IconName,
-                _plugin.Color);
+                _apiPlugin.IconName,
+                _apiPlugin.Color);
             _vm.SetPluginText(
-                _plugin.Name,
-                _plugin.ImportDescription,
-                _plugin.ExportDescription);
+                _apiPlugin.Name,
+                _apiPlugin.ImportDescription,
+                _apiPlugin.ExportDescription);
             _vm.SetPluginCommands(
-                _plugin.Convert,
-                _plugin.ConvertBack);
+                _apiPlugin.Convert,
+                _apiPlugin.ConvertBack);
 
-            PluginSettings.Content = _plugin.CreateSettingsControl();
-            PluginImport.Content = _plugin.CreateImportControl();
-            PluginExport.Content = _plugin.CreateExportControl();
+            PluginSettings.Content = _apiPlugin.CreateSettingsControl();
+            PluginImport.Content = _apiPlugin.CreateImportControl();
+            PluginExport.Content = _apiPlugin.CreateExportControl();
 
-            _plugin.ProgressChanged += PluginProgressChanged;
+            _apiPlugin.ProgressChanged += ApiPluginProgressChanged;
         }
 
-        private void PluginProgressChanged(object sender, System.EventArgs e)
+        private void ApiPluginProgressChanged(object sender, System.EventArgs e)
         {
             this.InvokeWPF(
                 () => _vm.UpdateProgress(
-                    _plugin.ProgressInformation,
-                    _plugin.Progress));
+                    _apiPlugin.ProgressInformation,
+                    _apiPlugin.Progress));
         }
     }
 }

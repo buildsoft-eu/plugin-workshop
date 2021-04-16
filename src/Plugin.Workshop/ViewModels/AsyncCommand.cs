@@ -90,6 +90,7 @@ namespace Plugin.Workshop.ViewModels
                 remove => CommandManager.RequerySuggested -= value;
             }
 
+            // ReSharper disable once MemberHidesStaticFromOuterClass
             private static void RaiseCanExecuteChanged()
             {
                 CommandManager.InvalidateRequerySuggested();

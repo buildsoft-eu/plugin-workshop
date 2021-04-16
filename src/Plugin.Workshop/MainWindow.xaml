@@ -17,9 +17,8 @@
     </Window.Resources>
 
     <Grid 
-        x:Name="MainGrid" 
-        Background="{
-            Binding PluginColor, 
+        Background="{Binding 
+            Path=PluginColor, 
             Mode=OneWay,
             Converter={StaticResource ColorConverter}}">
 
@@ -43,15 +42,19 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
-                        <Image Source="{Binding PluginIconPath, Mode=OneWay}" />
+                        <Image 
+                            Source="{Binding 
+                                Path=PluginIconPath,
+                                Mode=OneWay}" />
 
                         <TextBlock 
                             Grid.Column="1"
                             FontSize="16"
                             Margin="6,0"
                             VerticalAlignment="Center" 
-                            Text="{Binding PluginName, Mode=OneWay}" />
-
+                            Text="{Binding 
+                                Path=PluginName,
+                                Mode=OneWay}" />
                     </Grid>
 
                     <ContentControl x:Name="PluginSettings" Grid.Row="1" />
@@ -76,7 +79,10 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
 
-                        <Image Source="{Binding PluginIconPath, Mode=OneWay}" />
+                        <Image 
+                            Source="{Binding 
+                                Path=PluginIconPath,
+                                Mode=OneWay}" />
 
                         <TextBlock 
                             Grid.Column="1"

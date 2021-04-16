@@ -134,7 +134,6 @@ namespace Plugin.Workshop.ViewModels
                         out var ubsm,
                         out _);
 
-
                     var xml = ubsm.ToXml("Model");
                     var doc = new XDocument(xml);
                     doc.Save(
