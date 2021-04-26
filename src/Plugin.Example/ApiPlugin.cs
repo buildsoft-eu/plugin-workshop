@@ -8,7 +8,6 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using BuildSoft.BIMExpert.Plugin;
 using BuildSoft.UBSM;
-using BuildSoft.UBSM.Physical;
 using Plugin.Example.Services;
 using Plugin.Example.ViewModels;
 using Plugin.Example.Views;
@@ -102,6 +101,7 @@ namespace Plugin.Example
         #region Import
 
         private readonly ImportViewModel _importViewModel = new();
+        private LoadFromApiViewModel _loadFromApiViewModel;
         private MaterialConflictsViewModel _materialConflictsViewModel;
         private Dispatcher _importDispatcher;
 
@@ -115,24 +115,31 @@ namespace Plugin.Example
             };
             _importDispatcher = control.Dispatcher;
 
+            _loadFromApiViewModel = (LoadFromApiViewModel)control.LoadFromApi.DataContext;
+            _loadFromApiViewModel.WaitForCompletion = control.LoadFromApi.AwaitContinueButtonClick;
+
             _materialConflictsViewModel = (MaterialConflictsViewModel)control.MaterialConflicts.DataContext;
+            _materialConflictsViewModel.WaitForConflictResolutionCompletion =
+                control.MaterialConflicts.AwaitContinueButtonClick;
 
-            var materialConflictResolver = new MaterialConflictResolver(
-                _materialConflictsViewModel.SetConflicts,
-                _materialConflictsViewModel.CheckAllMaterialsMappedAsync,
-                control.MaterialConflicts.AwaitContinueButtonClick,
-                _materialConflictsViewModel.GetMappingResults);
-
-            _importViewModel.MaterialConflictResolver = materialConflictResolver;
             return control;
         }
 
+        /// <summary>
+        /// This is the entry point of the plugin, it's task is to bootstrap all dependencies
+        /// and hook up the UI correctly to the actual import service.
+        /// </summary>
+        /// <param name="options"></param>
+        /// <param name="token"></param>
+        /// <param name="ubsm"></param>
+        /// <param name="sourcePath"></param>
         public void Convert(
             List<IConversionOption> options,
             CancellationToken token,
             out Structure ubsm,
             out string sourcePath)
         {
+            // initialize
             _materialConflictsViewModel.Initialize();
             _importDispatcher.Invoke(
                 () =>
@@ -142,9 +149,22 @@ namespace Plugin.Example
                     BindingOperations.EnableCollectionSynchronization(_materialConflictsViewModel.Conflicts, collectionLock);
                     BindingOperations.EnableCollectionSynchronization(_materialConflictsViewModel.Materials, collectionLock);
                 });
-            var (structure, path) = ConvertAsync(token)
+            var importService = new ImportService(
+                _loadFromApiViewModel,
+                _materialConflictsViewModel,
+                _ubsmDatabase);
+            var progress = new Progress<(string, double)>(
+                t => OnProgressChanged(t.Item1, t.Item2));
+
+            // import from API and create UBSM
+            var (structure, path) = importService.RunAsync(
+                    _importViewModel.UpdateTitle,
+                    progress,
+                    token)
                 .GetAwaiter()
                 .GetResult();
+
+            // finalize
             _importDispatcher.Invoke(
                 () =>
                 {
@@ -155,50 +175,6 @@ namespace Plugin.Example
 
             ubsm = structure;
             sourcePath = path;
-        }
-
-        private async Task<(Structure, string)> ConvertAsync(CancellationToken token)
-        {
-            OnProgressChanged("Starting...", 0.0);
-
-            _importViewModel.UpdateTitle("Materials");
-            OnProgressChanged("Loading materials...", 0.0);
-            var materials = await _ubsmDatabase.GetMaterialsAsync();
-            _materialConflictsViewModel.SetMaterials(materials);
-            OnProgressChanged("resolving material conflicts", 1.0);
-            var mappedMaterials = await _importViewModel.GetMaterialMappingAsync(token);
-            OnProgressChanged("materials mapped", 4.0);
-            var ubsmMaterials = new List<Material>();
-            foreach (var mappedMaterial in mappedMaterials)
-            {
-                var material = await _ubsmDatabase.GetMaterialAsync(mappedMaterial.UbsmId);
-                ubsmMaterials.Add(material);
-                Debug.WriteLine($"> UBSM material {material.Name.Default}");
-            }
-
-            OnProgressChanged("loaded materials", 5.0);
-
-            for (var i = 1; i < 20; i++)
-            {
-                token.ThrowIfCancellationRequested();
-                _importViewModel.UpdateTitle($"Running in loop {i}");
-
-                await Task.Delay(100, CancellationToken.None);
-                var percentage = (i + 1) * 5d;
-                OnProgressChanged("Import: making progress...", percentage);
-            }
-
-            OnProgressChanged("All done", 100);
-
-            var result = new Structure
-            {
-                PhysicalModel =
-                {
-                    Materials = ubsmMaterials
-                }
-            };
-
-            return (result, null);
         }
 
         #endregion

@@ -24,4 +24,13 @@
     <ProjectReference Include="..\..\src\Plugin.Example\Plugin.Example.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="BuildSoft.BIMExpert.Plugin">
+      <HintPath>..\..\lib\BuildSoft.BIMExpert.Plugin\BuildSoft.BIMExpert.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="BuildSoft.UBSM">
+      <HintPath>..\..\lib\BuildSoft.BIMExpert.Plugin\BuildSoft.UBSM.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

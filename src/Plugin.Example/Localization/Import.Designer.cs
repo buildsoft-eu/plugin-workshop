@@ -68,5 +68,77 @@ namespace Plugin.Example.Localization {
                 return ResourceManager.GetString("Description", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fetching model....
+        /// </summary>
+        internal static string FetchModelProgress {
+            get {
+                return ResourceManager.GetString("FetchModelProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading materials....
+        /// </summary>
+        internal static string LoadingMaterials {
+            get {
+                return ResourceManager.GetString("LoadingMaterials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading model from API.
+        /// </summary>
+        internal static string LoadModelTitle {
+            get {
+                return ResourceManager.GetString("LoadModelTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Material Mapping.
+        /// </summary>
+        internal static string MappingMaterialsTitle {
+            get {
+                return ResourceManager.GetString("MappingMaterialsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Section Mapping.
+        /// </summary>
+        internal static string MappingSectionsTitle {
+            get {
+                return ResourceManager.GetString("MappingSectionsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Materials mapped.
+        /// </summary>
+        internal static string MaterialsMapped {
+            get {
+                return ResourceManager.GetString("MaterialsMapped", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Model loaded.
+        /// </summary>
+        internal static string ModelLoadedProgress {
+            get {
+                return ResourceManager.GetString("ModelLoadedProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Processing conflicts....
+        /// </summary>
+        internal static string ProcessingConflicts {
+            get {
+                return ResourceManager.GetString("ProcessingConflicts", resourceCulture);
+            }
+        }
     }
 }

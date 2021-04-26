@@ -12,21 +12,34 @@
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
     </UserControl.Resources>
-    <Grid x:Name="ContentGrid">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBlock Text="{Binding DisplayTitle, Mode=OneWay}" />
+        <TextBlock 
+            FontSize="16"
+            Margin="6"
+            Text="{Binding DisplayTitle, Mode=OneWay}" />
+
+        <!-- Load from API -->
+        <views:LoadFromApi
+            x:Name="LoadFromApi"
+            d:DataContext="{d:DesignInstance Type=viewModels:LoadFromApiViewModel}"
+            Grid.Row="1"
+            Visibility="{Binding 
+                Path=IsVisible, 
+                Mode=OneWay, 
+                Converter={StaticResource BooleanToVisibilityConverter}}"/>
 
         <!-- Material Conflict -->
         <views:MaterialConflicts 
             x:Name="MaterialConflicts"
+            d:DataContext="{d:DesignInstance Type=viewModels:MaterialConflictsViewModel}"
             Grid.Row="1"
             Visibility="{Binding 
-                Path = DataContext.ShowMaterialConflictsControl, 
-                RelativeSource={RelativeSource AncestorType=UserControl},
+                Path=IsVisible, 
                 Mode=OneWay, 
                 Converter={StaticResource BooleanToVisibilityConverter}}"/>
 

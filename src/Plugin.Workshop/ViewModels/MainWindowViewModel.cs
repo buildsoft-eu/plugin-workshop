@@ -125,7 +125,7 @@ namespace Plugin.Workshop.ViewModels
 
                     if (directory == null)
                     {
-                        throw new Exception("Export path does not contain a valid directory name");
+                        throw new Exception("Import path does not contain a valid directory name");
                     }
 
                     action(

@@ -47,7 +47,8 @@
                     MinWidth="200"
                     SelectedItemBinding="{Binding 
                         Path=MappedTo,
-                        UpdateSourceTrigger=PropertyChanged}" />
+                        UpdateSourceTrigger=PropertyChanged}"
+                    SortMemberPath="Name" />
             </DataGrid.Columns>
         </DataGrid>
 
