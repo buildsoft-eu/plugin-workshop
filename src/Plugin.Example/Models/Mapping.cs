@@ -2,7 +2,7 @@
 
 namespace Plugin.Example.Models
 {
-    public class MaterialMapping
+    public class Mapping
     {
         public string ApiName { get; set; }
         public Guid UbsmId { get; set; }

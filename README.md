@@ -13,7 +13,7 @@ The workshop project connects to BIM Expert in exactly the same way your plugin 
 
 ## Entry points
 
-`IUBSMConverter` contains all the entry points used by BIM Expert to communicate with the plugin. `Plugin.Example/Plugin.cs` contains the class that implements this interface.
+`IUBSMConverter` contains all the entry points used by BIM Expert to communicate with the plugin. `Plugin.Example/ApiPlugin.cs` contains the class that implements this interface.
 
 * *Info*: contains general information about the plugin.
 * *Export*: WPF control and entry point to export a UBSM model to the target application.

@@ -2,9 +2,9 @@
 
 namespace Plugin.Example.ViewModels
 {
-    public class UbsmMaterialViewModel
+    public class UbsmMappingViewModel
     {
         public Guid Id { get; set; }
-        public string Name { get; set; }
+        public string DisplayName { get; set; }
     }
 }

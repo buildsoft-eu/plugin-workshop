@@ -21,5 +21,20 @@
             <TextBlock Text="{Binding ExportConnectionsText, Mode=OneWay}" />
         </CheckBox>
 
+        <Grid Margin="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock
+                Grid.Column="0"
+                Text="{Binding PortalDistanceText, Mode=OneWay}" />
+            <TextBox
+                Grid.Column="1"
+                Margin="6,0,0,0"
+                Text="{Binding PortalDistance}" />
+        </Grid>
+
     </StackPanel>
 </UserControl>

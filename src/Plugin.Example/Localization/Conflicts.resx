@@ -120,17 +120,23 @@
   <data name="ApiMaterial" xml:space="preserve">
     <value>API Material</value>
   </data>
+  <data name="ApiSection" xml:space="preserve">
+    <value>API Section</value>
+  </data>
   <data name="MissingMapping" xml:space="preserve">
     <value>Mapping</value>
   </data>
   <data name="Resolved" xml:space="preserve">
-    <value>OK</value>
+    <value>None</value>
   </data>
   <data name="Type" xml:space="preserve">
     <value>Conflict Type</value>
   </data>
   <data name="UbsmMaterial" xml:space="preserve">
     <value>UBSM Material</value>
+  </data>
+  <data name="UbsmSection" xml:space="preserve">
+    <value>UBSM Section</value>
   </data>
   <data name="Unknown" xml:space="preserve">
     <value>Unknown</value>

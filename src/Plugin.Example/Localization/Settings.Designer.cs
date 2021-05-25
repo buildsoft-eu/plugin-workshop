@@ -70,6 +70,15 @@ namespace Plugin.Example.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Distance between portals [m].
+        /// </summary>
+        internal static string PortalDistance {
+            get {
+                return ResourceManager.GetString("PortalDistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Example Plugin Settings.
         /// </summary>
         internal static string Title {

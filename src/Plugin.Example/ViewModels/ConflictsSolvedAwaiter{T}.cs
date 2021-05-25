@@ -6,7 +6,8 @@ using System.Runtime.CompilerServices;
 
 namespace Plugin.Example.ViewModels
 {
-    public class MaterialConflictsSolvedAwaiter : INotifyCompletion
+    public class ConflictsSolvedAwaiter<T> : INotifyCompletion
+    where T : IConflictViewModel
     {
         public bool IsCompleted => false;
 
@@ -14,8 +15,7 @@ namespace Plugin.Example.ViewModels
         {
         }
 
-        public ObservableCollection<MaterialConflictViewModel> Conflicts { get; set; }
-
+        public ObservableCollection<T> Conflicts { get; set; }
 
         private Action _continuation;
 

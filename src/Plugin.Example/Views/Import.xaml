@@ -33,7 +33,7 @@
                 Mode=OneWay, 
                 Converter={StaticResource BooleanToVisibilityConverter}}"/>
 
-        <!-- Material Conflict -->
+        <!-- Material Conflicts -->
         <views:MaterialConflicts 
             x:Name="MaterialConflicts"
             d:DataContext="{d:DesignInstance Type=viewModels:MaterialConflictsViewModel}"
@@ -43,5 +43,14 @@
                 Mode=OneWay, 
                 Converter={StaticResource BooleanToVisibilityConverter}}"/>
 
+        <!-- Section Conflicts -->
+        <views:SectionConflicts
+            x:Name="SectionConflicts"
+            d:DataContext="{d:DesignInstance Type=viewModels:SectionConflictsViewModel}" 
+            Grid.Row="1"
+            Visibility="{Binding 
+                Path=IsVisible, 
+                Mode=OneWay, 
+                Converter={StaticResource BooleanToVisibilityConverter}}"/>
     </Grid>
 </UserControl>

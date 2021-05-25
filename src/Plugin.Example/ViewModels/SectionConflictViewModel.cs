@@ -3,9 +3,9 @@ using Plugin.Example.Models;
 
 namespace Plugin.Example.ViewModels
 {
-    public class MaterialConflictViewModel : ConflictViewModelBase<Material>
+    public class SectionConflictViewModel : ConflictViewModelBase<Section>
     {
-        public MaterialConflictViewModel(Conflict<Material> data)
+        public SectionConflictViewModel(Conflict<Section> data)
             : base(data)
         {
         }

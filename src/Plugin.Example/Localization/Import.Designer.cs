@@ -61,6 +61,15 @@ namespace Plugin.Example.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fetching details from the database.
+        /// </summary>
+        internal static string DatabaseDetailsTitle {
+            get {
+                return ResourceManager.GetString("DatabaseDetailsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Converts our example format into a UBSM model..
         /// </summary>
         internal static string Description {
@@ -79,11 +88,38 @@ namespace Plugin.Example.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Finished importing.
+        /// </summary>
+        internal static string Finished {
+            get {
+                return ResourceManager.GetString("Finished", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} portals imported.
+        /// </summary>
+        internal static string FinishedTitle {
+            get {
+                return ResourceManager.GetString("FinishedTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Loading materials....
         /// </summary>
         internal static string LoadingMaterials {
             get {
                 return ResourceManager.GetString("LoadingMaterials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading sections....
+        /// </summary>
+        internal static string LoadingSections {
+            get {
+                return ResourceManager.GetString("LoadingSections", resourceCulture);
             }
         }
         
@@ -115,6 +151,15 @@ namespace Plugin.Example.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Material details obtained.
+        /// </summary>
+        internal static string MaterialDetailsObtained {
+            get {
+                return ResourceManager.GetString("MaterialDetailsObtained", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Materials mapped.
         /// </summary>
         internal static string MaterialsMapped {
@@ -133,11 +178,38 @@ namespace Plugin.Example.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mapping {0} portals to UBSM geometry.
+        /// </summary>
+        internal static string PortalMappingTitle {
+            get {
+                return ResourceManager.GetString("PortalMappingTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Processing conflicts....
         /// </summary>
         internal static string ProcessingConflicts {
             get {
                 return ResourceManager.GetString("ProcessingConflicts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Section details obtained.
+        /// </summary>
+        internal static string SectionDetailsObtained {
+            get {
+                return ResourceManager.GetString("SectionDetailsObtained", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sections mapped.
+        /// </summary>
+        internal static string SectionsMapped {
+            get {
+                return ResourceManager.GetString("SectionsMapped", resourceCulture);
             }
         }
     }

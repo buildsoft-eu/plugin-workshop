@@ -14,7 +14,7 @@ using Plugin.Example.Views;
 using Color = BuildSoft.UBSM.Visualisation.Color;
 using Dispatcher = System.Windows.Threading.Dispatcher;
 using Settings = Plugin.Example.Views.Settings;
-using SettingsViewModel = BuildSoft.BIMExpert.Plugin.SettingsViewModel;
+using SettingsViewModel = Plugin.Example.ViewModels.SettingsViewModel;
 
 namespace Plugin.Example
 {
@@ -27,7 +27,7 @@ namespace Plugin.Example
 
         public ApiPlugin()
         {
-            _settingsViewModel = new ViewModels.SettingsViewModel(_settingsRepository);
+            _settingsViewModel = new SettingsViewModel(_settingsRepository);
         }
 
         #endregion
@@ -103,6 +103,7 @@ namespace Plugin.Example
         private readonly ImportViewModel _importViewModel = new();
         private LoadFromApiViewModel _loadFromApiViewModel;
         private MaterialConflictsViewModel _materialConflictsViewModel;
+        private SectionConflictsViewModel _sectionConflictsViewModel;
         private Dispatcher _importDispatcher;
 
         public string ImportDescription => Localization.Import.Description;
@@ -116,11 +117,25 @@ namespace Plugin.Example
             _importDispatcher = control.Dispatcher;
 
             _loadFromApiViewModel = (LoadFromApiViewModel)control.LoadFromApi.DataContext;
-            _loadFromApiViewModel.WaitForCompletion = control.LoadFromApi.AwaitContinueButtonClick;
+            _loadFromApiViewModel.WaitForCompletion =
+                async () =>
+                {
+                    await control.LoadFromApi.ContinueButton;
+                };
 
             _materialConflictsViewModel = (MaterialConflictsViewModel)control.MaterialConflicts.DataContext;
             _materialConflictsViewModel.WaitForConflictResolutionCompletion =
-                control.MaterialConflicts.AwaitContinueButtonClick;
+                async () =>
+                {
+                    await control.MaterialConflicts.ContinueButton;
+                };
+
+            _sectionConflictsViewModel = (SectionConflictsViewModel)control.SectionConflicts.DataContext;
+            _sectionConflictsViewModel.WaitForConflictResolutionCompletion =
+                async () =>
+                {
+                    await control.SectionConflicts.ContinueButton;
+                };
 
             return control;
         }
@@ -141,18 +156,19 @@ namespace Plugin.Example
         {
             // initialize
             _materialConflictsViewModel.Initialize();
-            _importDispatcher.Invoke(
-                () =>
-                {
-                    // observable collections can only be updated from GUI thread
-                    var collectionLock = new object();
-                    BindingOperations.EnableCollectionSynchronization(_materialConflictsViewModel.Conflicts, collectionLock);
-                    BindingOperations.EnableCollectionSynchronization(_materialConflictsViewModel.Materials, collectionLock);
-                });
+            _sectionConflictsViewModel.Initialize();
+
+            // observable collections can only be updated from GUI thread
+            EnableSynchronization(_materialConflictsViewModel);
+            EnableSynchronization(_sectionConflictsViewModel);
+
             var importService = new ImportService(
                 _loadFromApiViewModel,
                 _materialConflictsViewModel,
-                _ubsmDatabase);
+                _sectionConflictsViewModel,
+                _ubsmDatabase,
+                new IdGenerator(),
+                _settingsViewModel.Data);
             var progress = new Progress<(string, double)>(
                 t => OnProgressChanged(t.Item1, t.Item2));
 
@@ -165,16 +181,37 @@ namespace Plugin.Example
                 .GetResult();
 
             // finalize
+            DisableSynchronization(_materialConflictsViewModel);
+            DisableSynchronization(_sectionConflictsViewModel);
+
+            ubsm = structure;
+            sourcePath = path;
+        }
+
+        private void EnableSynchronization<TConflictViewModel, TUbsm, TApi>(
+            ConflictsViewModelBase<TConflictViewModel, TUbsm, TApi> conflictsViewModel)
+        where TConflictViewModel : IConflictViewModel
+        {
+            _importDispatcher.Invoke(
+                () =>
+                {
+                    var collectionLock = new object();
+                    BindingOperations.EnableCollectionSynchronization(conflictsViewModel.Conflicts, collectionLock);
+                    BindingOperations.EnableCollectionSynchronization(conflictsViewModel.Mappings, collectionLock);
+                });
+        }
+
+        private void DisableSynchronization<TConflictViewModel, TUbsm, TApi>(
+            ConflictsViewModelBase<TConflictViewModel, TUbsm, TApi> conflictsViewModel)
+        where TConflictViewModel : IConflictViewModel
+        {
             _importDispatcher.Invoke(
                 () =>
                 {
                     // observable collections can only be updated from GUI thread
-                    BindingOperations.DisableCollectionSynchronization(_materialConflictsViewModel.Conflicts);
-                    BindingOperations.DisableCollectionSynchronization(_materialConflictsViewModel.Materials);
+                    BindingOperations.DisableCollectionSynchronization(conflictsViewModel.Conflicts);
+                    BindingOperations.DisableCollectionSynchronization(conflictsViewModel.Mappings);
                 });
-
-            ubsm = structure;
-            sourcePath = path;
         }
 
         #endregion

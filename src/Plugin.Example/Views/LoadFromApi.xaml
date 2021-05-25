@@ -6,8 +6,25 @@
              xmlns:viewModels="clr-namespace:Plugin.Example.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450"
-             d:DesignWidth="800"
-             d:DataContext="{d:DesignInstance viewModels:LoadFromApiViewModel}">
+             d:DesignWidth="800">
+    <UserControl.DataContext>
+        <viewModels:LoadFromApiViewModel />
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <Style x:Key="ErrorStyle" TargetType="FrameworkElement">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="True">
+                    <Setter 
+                        Property="ToolTip" 
+                        Value="{Binding
+                            RelativeSource={x:Static RelativeSource.Self},
+                            Path=(Validation.Errors).CurrentItem.ErrorContent}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -21,7 +38,12 @@
         <TextBox 
             Grid.Row="1"
             Margin="0,3"
-            Text="{Binding Path, UpdateSourceTrigger=PropertyChanged}"/>
+            Style="{StaticResource ErrorStyle}"
+            Text="{Binding 
+                Path=Path, 
+                UpdateSourceTrigger=PropertyChanged,
+                NotifyOnValidationError=True,
+                ValidatesOnNotifyDataErrors=True}"/>
 
         <Button
             x:Name="ContinueButton"

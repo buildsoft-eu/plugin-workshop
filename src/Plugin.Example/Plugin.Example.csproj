@@ -73,19 +73,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LoadFromApi.resx</DependentUpon>
     </Compile>
-    <Compile Include="Localization\MaterialConflicts.Designer.cs">
+    <Compile Include="Localization\Conflicts.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MaterialConflicts.resx</DependentUpon>
+      <DependentUpon>Conflicts.resx</DependentUpon>
     </Compile>
-    <Compile Include="Models\MaterialMapping.cs" />
+    <Compile Include="Models\Mapping.cs" />
+    <Compile Include="Services\ApiMaterialEqualityByNameComparer.cs" />
+    <Compile Include="Services\ApiSectionEqualityByNameComparer.cs" />
     <Compile Include="Services\IApiLoader.cs" />
+    <Compile Include="Services\IConflictResolver{TApi,T}.cs" />
+    <Compile Include="Services\IdGenerator.cs" />
     <Compile Include="Services\ImportService.cs" />
     <Compile Include="Services\IUbsmDatabase.cs" />
     <Compile Include="Services\UbsmDatabase.cs" />
+    <Compile Include="ViewModels\ConflictsViewModelBase{T1,T2}.cs" />
+    <Compile Include="ViewModels\ConflictViewModelBase{T}.cs" />
+    <Compile Include="ViewModels\IConflictViewModel.cs" />
     <Compile Include="ViewModels\LoadFromApiViewModel.cs" />
-    <Compile Include="ViewModels\MaterialConflictsSolvedAwaiter.cs" />
-    <Compile Include="ViewModels\UbsmMaterialViewModel.cs" />
+    <Compile Include="ViewModels\ConflictsSolvedAwaiter{T}.cs" />
+    <Compile Include="ViewModels\SectionConflictsViewModel.cs" />
+    <Compile Include="ViewModels\SectionConflictViewModel.cs" />
+    <Compile Include="ViewModels\UbsmMappingViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelWithContinueBase.cs" />
+    <Compile Include="Views\BindingProxySectionConflicts.cs" />
     <Compile Include="Views\BindingProxyMaterialConflicts.cs" />
     <Compile Include="Extension.cs" />
     <Compile Include="Localization\Export.Designer.cs">
@@ -109,14 +120,13 @@
       <DependentUpon>Settings.resx</DependentUpon>
     </Compile>
     <Compile Include="Models\ConflictType.cs" />
-    <Compile Include="Models\MaterialConflict.cs" />
+    <Compile Include="Models\Conflict{TApi}.cs" />
     <Compile Include="Models\Settings.cs" />
     <Compile Include="ApiPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ISettingsRepository.cs" />
     <Compile Include="Services\SettingsRepository.cs" />
     <Compile Include="ViewModels\ExportViewModel.cs" />
-    <Compile Include="Services\IMaterialConflictResolver.cs" />
     <Compile Include="ViewModels\ImportViewModel.cs" />
     <Compile Include="ViewModels\MaterialConflictsViewModel.cs" />
     <Compile Include="ViewModels\MaterialConflictViewModel.cs" />
@@ -135,6 +145,9 @@
     </Compile>
     <Compile Include="Views\MaterialConflicts.xaml.cs">
       <DependentUpon>MaterialConflicts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SectionConflicts.xaml.cs">
+      <DependentUpon>SectionConflicts.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
@@ -160,9 +173,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>LoadFromApi.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Localization\MaterialConflicts.resx">
+    <EmbeddedResource Include="Localization\Conflicts.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>MaterialConflicts.Designer.cs</LastGenOutput>
+      <LastGenOutput>Conflicts.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Localization\Settings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -189,6 +202,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MaterialConflicts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SectionConflicts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

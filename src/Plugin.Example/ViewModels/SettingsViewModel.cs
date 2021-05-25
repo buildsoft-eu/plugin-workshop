@@ -14,17 +14,17 @@ namespace Plugin.Example.ViewModels
 
         #region Base class implementations
 
-        private Settings _settings = new();
+        public Settings Data { get; private set; } = new();
 
         public override void Load()
         {
-            _settings = _settingsRepository.Get();
+            Data = _settingsRepository.Get();
             OnPropertyChanged(nameof(ExportConnections));
         }
 
         public override void Save()
         {
-            _settingsRepository.Set(_settings);
+            _settingsRepository.Set(Data);
         }
 
         public override void Undo()
@@ -48,10 +48,20 @@ namespace Plugin.Example.ViewModels
 
         public bool ExportConnections
         {
-            get => _settings.ExportWithConnections;
+            get => Data.ExportWithConnections;
             set
             {
-                _settings.ExportWithConnections = value;
+                Data.ExportWithConnections = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public double PortalDistance
+        {
+            get => Data.PortalDistance;
+            set
+            {
+                Data.PortalDistance = value;
                 OnPropertyChanged();
             }
         }
@@ -62,6 +72,7 @@ namespace Plugin.Example.ViewModels
 
         public string TitleText => Localization.Settings.Title;
         public string ExportConnectionsText => Localization.Settings.ExportConnections;
+        public string PortalDistanceText => Localization.Settings.PortalDistance;
 
         #endregion
     }
