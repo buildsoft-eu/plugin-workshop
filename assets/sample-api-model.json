@@ -1,0 +1,54 @@
+{
+"country":"Belgium",
+"portals":[
+  {
+    "height":2.8,
+    "width":8.2,
+	"beam":{
+      "material":{"name":"S235"},
+      "section":{
+        "name":"IPE270",
+        "height":270,
+        "width":135,
+        "flangeThickness":10,
+        "webThickness":7,
+        "roundingRadius":15}},
+    "column":{
+      "material":{"name":"S275_x"},
+      "section":{
+        "name":"HEA200",
+        "height":190,
+        "width":200,
+        "flangeThickness":10,
+        "webThickness":7,
+        "roundingRadius":18}},
+    "connection":{
+      "endPlateThickness":10,
+      "boltRows":3,
+      "boltAssemblyName":"M-20"}},
+  {
+    "height":2.8,
+    "width":8.2,
+	"beam":{
+      "material":{"name":"S235"},
+      "section":{
+        "name":"IPE270",
+        "height":270,
+        "width":135,
+        "flangeThickness":10,
+        "webThickness":7,
+        "roundingRadius":15}},
+    "column":{
+      "material":{"name":"S275_x"},
+      "section":{
+        "name":"HEA200",
+        "height":190,
+        "width":200,
+        "flangeThickness":10,
+        "webThickness":7,
+        "roundingRadius":18}},
+    "connection":{
+      "endPlateThickness":10,
+      "boltRows":3,
+      "boltAssemblyName":"M-20"}}
+]}
