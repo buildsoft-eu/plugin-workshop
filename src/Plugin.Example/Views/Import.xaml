@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="Plugin.Example.Views.Import"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:Plugin.Example.ViewModels"
+             xmlns:views="clr-namespace:Plugin.Example.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" 
+             d:DesignWidth="800"
+             d:DataContext="{d:DesignInstance viewModels:ImportViewModel, IsDesignTimeCreatable=False}">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock 
+            FontSize="16"
+            Margin="6"
+            Text="{Binding DisplayTitle, Mode=OneWay}" />
+
+        <!-- Load from API -->
+        <views:LoadFromApi
+            x:Name="LoadFromApi"
+            d:DataContext="{d:DesignInstance Type=viewModels:LoadFromApiViewModel}"
+            Grid.Row="1"
+            Visibility="{Binding 
+                Path=IsVisible, 
+                Mode=OneWay, 
+                Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+        <!-- Material Conflicts -->
+        <views:MaterialConflicts 
+            x:Name="MaterialConflicts"
+            d:DataContext="{d:DesignInstance Type=viewModels:MaterialConflictsViewModel}"
+            Grid.Row="1"
+            Visibility="{Binding 
+                Path=IsVisible, 
+                Mode=OneWay, 
+                Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+        <!-- Section Conflicts -->
+        <views:SectionConflicts
+            x:Name="SectionConflicts"
+            d:DataContext="{d:DesignInstance Type=viewModels:SectionConflictsViewModel}" 
+            Grid.Row="1"
+            Visibility="{Binding 
+                Path=IsVisible, 
+                Mode=OneWay, 
+                Converter={StaticResource BooleanToVisibilityConverter}}"/>
+    </Grid>
+</UserControl>

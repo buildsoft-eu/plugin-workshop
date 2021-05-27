@@ -1,0 +1,240 @@
+﻿<Window x:Class="Plugin.Workshop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:converters="clr-namespace:Plugin.Workshop.Converters"
+        xmlns:viewModels="clr-namespace:Plugin.Workshop.ViewModels"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance viewModels:MainWindowViewModel}"
+        Title="Plugin Workshop" 
+        Height="450"
+        Width="800"
+        Initialized="Window_Initialized">
+    <Window.Resources>
+        <converters:ColorConverter x:Key="ColorConverter" />
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </Window.Resources>
+
+    <Grid 
+        Background="{Binding 
+            Path=PluginColor, 
+            Mode=OneWay,
+            Converter={StaticResource ColorConverter}}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TabControl>
+            <TabItem Header="{Binding SettingsText, Mode=OneWay}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="32" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="32" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Image 
+                            Source="{Binding 
+                                Path=PluginIconPath,
+                                Mode=OneWay}" />
+
+                        <TextBlock 
+                            Grid.Column="1"
+                            FontSize="16"
+                            Margin="6,0"
+                            VerticalAlignment="Center" 
+                            Text="{Binding 
+                                Path=PluginName,
+                                Mode=OneWay}" />
+                    </Grid>
+
+                    <ContentControl x:Name="PluginSettings" Grid.Row="1" />
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="{Binding ImportText, Mode=OneWay}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="32" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="32" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Image 
+                            Source="{Binding 
+                                Path=PluginIconPath,
+                                Mode=OneWay}" />
+
+                        <TextBlock 
+                            Grid.Column="1"
+                            FontSize="16"
+                            Margin="6,0"
+                            VerticalAlignment="Center">
+                            <Run Text="{Binding PluginName, Mode=OneWay}" />
+                            <Run Text=" - " />
+                            <Run Text="{Binding PluginImportDescription, Mode=OneWay}" />
+                        </TextBlock>
+
+                        <Button 
+                            Grid.Column="2"
+                            Command="{Binding ImportCommand}"
+                            Padding ="18,6"
+                            Visibility="{Binding
+                                Path=ImportCommand.Execution.IsCompleted,
+                                Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <TextBlock Text="{Binding StartText, Mode=OneWay}" />
+                        </Button>
+
+                        <Button 
+                            Grid.Column="3"
+                            Command="{Binding ImportCommand.CancelCommand}"
+                            Padding ="18,6"
+                            Visibility="{Binding
+                                Path=ImportCommand.Execution.IsNotCompleted,
+                                Converter={StaticResource BooleanToVisibilityConverter},
+                                FallbackValue=Collapsed}">
+                            <TextBlock Text="{Binding CancelText, Mode=OneWay}" />
+                        </Button>
+                    </Grid>
+
+                    <TextBox 
+                        Grid.Row="1"
+                        Margin="0,3"
+                        Text="{Binding ImportPath}" />
+
+                    <ContentControl x:Name="PluginImport" Grid.Row="2" />
+
+                    <TextBlock
+                        Grid.Row="3"
+                        Foreground="DarkRed"
+                        Margin="6"
+                        Text="{Binding ImportCommand.Execution.ErrorMessage}"
+                        Visibility="{Binding 
+                            Path =ImportCommand.Execution.IsFaulted, 
+                            Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+                    <TextBlock
+                        Grid.Row="4"
+                        Foreground="DarkGoldenrod"
+                        Margin="6"
+                        Text="The operation was cancelled"
+                        Visibility="{Binding 
+                            Path =ImportCommand.Execution.IsCanceled, 
+                            Converter={StaticResource BooleanToVisibilityConverter},
+                            FallbackValue=Collapsed}"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="{Binding ExportText, Mode=OneWay}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="32" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="32" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="{Binding PluginIconPath, Mode=OneWay}" />
+
+                        <TextBlock
+                            Grid.Column="1"
+                            FontSize="16"
+                            Margin="6,0"
+                            VerticalAlignment="Center">
+                            <Run Text="{Binding PluginName, Mode=OneWay}" />
+                            <Run Text=" - " />
+                            <Run Text="{Binding PluginExportDescription, Mode=OneWay}" />
+                        </TextBlock>
+
+                        <Button
+                            Grid.Column="2"
+                            Command="{Binding ExportCommand}"
+                            Padding ="18,6"
+                            Visibility="{Binding
+                                Path=ExportCommand.Execution.IsCompleted,
+                                Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <TextBlock Text="{Binding StartText, Mode=OneWay}" />
+                        </Button>
+
+                        <Button
+                            Grid.Column="3"
+                            Command="{Binding ExportCommand.CancelCommand}"
+                            Padding ="18,6"
+                            Visibility="{Binding
+                                Path=ExportCommand.Execution.IsNotCompleted,
+                                Converter={StaticResource BooleanToVisibilityConverter},
+                                FallbackValue=Collapsed}">
+                            <TextBlock Text="{Binding CancelText, Mode=OneWay}" />
+                        </Button>
+                    </Grid>
+
+                    <TextBox 
+                        Grid.Row="1"
+                        Margin="0,3"
+                        Text="{Binding ExportPath}" />
+
+                    <ContentControl x:Name="PluginExport" Grid.Row="2" />
+
+                    <TextBlock
+                        Grid.Row="3"
+                        Foreground="DarkRed"
+                        Margin="6"
+                        Text="{Binding ExportCommand.Execution.ErrorMessage}"
+                        Visibility="{Binding 
+                            Path =ExportCommand.Execution.IsFaulted, 
+                            Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+                    <TextBlock
+                        Grid.Row="4"
+                        Foreground="DarkGoldenrod"
+                        Margin="6"
+                        Text="The operation was cancelled"
+                        Visibility="{Binding 
+                            Path =ExportCommand.Execution.IsCanceled, 
+                            Converter={StaticResource BooleanToVisibilityConverter},
+                            FallbackValue=Collapsed}"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+        <TextBlock
+            Grid.Row="1"
+            Background="White"
+            Padding="6"
+            Text="{Binding ProgressText, Mode=OneWay}" />
+
+        <ProgressBar
+            Grid.Row="2"
+            Height="6"
+            Maximum="100"
+            Value="{Binding Progress, Mode=OneWay}" />
+    </Grid>
+</Window>
